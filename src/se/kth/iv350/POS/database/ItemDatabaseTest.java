@@ -1,10 +1,10 @@
 package se.kth.iv350.POS.database;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static junit.framework.TestCase.assertEquals;
 
 class ItemDatabaseTest {
 

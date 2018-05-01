@@ -4,7 +4,7 @@ import se.kth.iv350.POS.controller.Controller;
 import se.kth.iv350.POS.database.ItemDatabase;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.view.View;
-
+//Erik kommentar
 public class Main {
     public static void main (String[] args){
 
