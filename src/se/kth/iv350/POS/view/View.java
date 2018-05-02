@@ -140,31 +140,8 @@ public class View {
             public void actionPerformed(ActionEvent e) {
 
                 PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
-                updateView(purchaseDTO.getUniqueItems());
+                updateView(purchaseDTO.getUniqueItems(), model);
                 totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
-            }
-
-            private void updateView(ArrayList<UniqueItem> items) {
-                System.out.println("Rows" + model.getRowCount());
-
-                for (int i = 0; i < model.getRowCount(); i++){
-                    model.removeRow(i);
-                }
-
-                for (UniqueItem item : items)
-                    model.addRow(item.getRowObject());
-
-                // Horribel buggfix
-                if (model.getRowCount()>2)
-                    model.removeRow(0);
-
-                if (model.getRowCount()>4)
-                    model.removeRow(0);
-
-                System.out.println("Rows" + model.getRowCount());
-                System.out.println("Unique: " + items.size());
-                System.out.println();
-
             }
         });
 
@@ -175,38 +152,17 @@ public class View {
             public void actionPerformed(ActionEvent e) {
 
                 int amount = Integer.parseInt(textAmount.getText());
-
                 PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());;
-                for (int i = 1; i < amount; i++){
+                for (int i = 1; i < amount; i++)
                     purchaseDTO = controller.registerItem(textId.getText());
-                }
 
-                updateView(purchaseDTO.getUniqueItems());
+                updateView(purchaseDTO.getUniqueItems(), model);
                 totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
-            }
-
-            private void updateView(ArrayList<UniqueItem> items) {
-                System.out.println("Rows" + model.getRowCount());
-
-                for (int i = 0; i < model.getRowCount(); i++){
-                    model.removeRow(i);
-                }
-
-                for (UniqueItem item : items)
-                    model.addRow(item.getRowObject());
-
-                // Horribel buggfix för model.addRow inte funkar ordentligt
-                if (model.getRowCount()>2)
-                    model.removeRow(0);
-
-                if (model.getRowCount()>4)
-                    model.removeRow(0);
-
             }
         });
 
 
-        // button update row
+        // Change panel to 
         btnClose.addActionListener(new ActionListener(){
 
             @Override
@@ -218,6 +174,23 @@ public class View {
                 frame.repaint();
             }
         });
+
+    }
+    private void updateView(ArrayList<UniqueItem> items, DefaultTableModel model) {
+
+        for (int i = 0; i < model.getRowCount(); i++){
+            model.removeRow(i);
+        }
+
+        for (UniqueItem item : items)
+            model.addRow(item.getRowObject());
+
+        // Horribel buggfix för jag inte förstår varför model.addRow inte funkar ordentligt
+        if (model.getRowCount()>2)
+            model.removeRow(0);
+
+        if (model.getRowCount()>4)
+            model.removeRow(0);
 
     }
 }
