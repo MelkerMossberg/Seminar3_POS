@@ -133,7 +133,7 @@ public class View {
         panelSale.add(btnClose);
 
 
-        // button add row
+        // Register new Item
         btnAdd.addActionListener(new ActionListener(){
 
             @Override
@@ -167,6 +167,44 @@ public class View {
 
             }
         });
+
+        // Add amount
+        btnAmount.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int amount = Integer.parseInt(textAmount.getText());
+
+                PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());;
+                for (int i = 1; i < amount; i++){
+                    purchaseDTO = controller.registerItem(textId.getText());
+                }
+
+                updateView(purchaseDTO.getUniqueItems());
+                totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+            }
+
+            private void updateView(ArrayList<UniqueItem> items) {
+                System.out.println("Rows" + model.getRowCount());
+
+                for (int i = 0; i < model.getRowCount(); i++){
+                    model.removeRow(i);
+                }
+
+                for (UniqueItem item : items)
+                    model.addRow(item.getRowObject());
+
+                // Horribel buggfix för model.addRow inte funkar ordentligt
+                if (model.getRowCount()>2)
+                    model.removeRow(0);
+
+                if (model.getRowCount()>4)
+                    model.removeRow(0);
+
+            }
+        });
+
 
         // button update row
         btnClose.addActionListener(new ActionListener(){
