@@ -33,6 +33,13 @@ public class Purchase {
         uniqueItems.add(new UniqueItem(validItem));
     }
 
+    public void updateTotal() {
+        int newTotal = 0;
+        for (ItemDTO item : this.items)
+            newTotal += item.getItemPrice();
+        this.totalPrice = newTotal;
+    }
+
     public ArrayList<UniqueItem> getUniqueItems (){
         return this.uniqueItems;
     }

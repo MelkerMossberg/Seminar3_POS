@@ -77,6 +77,9 @@ public class View {
         table.setFont(font);
         table.setRowHeight(30);
 
+        JLabel totalPriceLabel = new JLabel("Total Price: ");
+        JLabel totalPriceInput = new JLabel();
+
         // create JTextFields
         JTextField textId = new JTextField();
         JTextField textAmount = new JTextField();
@@ -89,6 +92,10 @@ public class View {
         JButton btnCustomer = new JButton("Customer ID");
         JButton btnPayed = new JButton("Amount Payed");
         JButton btnClose = new JButton("Finish");
+
+
+        totalPriceLabel.setBounds(600, 310, 100, 25);
+        totalPriceInput.setBounds(700, 310, 100, 25);
 
         textId.setBounds(20, 220, 100, 25);
         textAmount.setBounds(20, 250, 100, 25);
@@ -111,6 +118,8 @@ public class View {
         panelSale.add(pane);
 
         // add JTextFields to the jframe
+        panelSale.add(totalPriceLabel);
+        panelSale.add(totalPriceInput);
         panelSale.add(textId);
         panelSale.add(textAmount);
         panelSale.add(textCustomerID);
@@ -132,6 +141,7 @@ public class View {
 
                 PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
                 updateView(purchaseDTO.getUniqueItems());
+                totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
             }
 
             private void updateView(ArrayList<UniqueItem> items) {
@@ -154,6 +164,7 @@ public class View {
                 System.out.println("Rows" + model.getRowCount());
                 System.out.println("Unique: " + items.size());
                 System.out.println();
+
             }
         });
 

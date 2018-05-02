@@ -48,6 +48,7 @@ public class Controller {
             return this.purchase.getPurchaseData(); // return previous PurchaseDTO
         }else{
             this.purchase.addItem(validItem);
+            this.purchase.updateTotal();
             return purchase.getPurchaseData();
         }
     }
