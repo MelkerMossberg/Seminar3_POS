@@ -2,6 +2,7 @@ package se.kth.iv350.POS.controller;
 
 import se.kth.iv350.POS.database.ItemDTO;
 import se.kth.iv350.POS.integration.AccountingSystem;
+import se.kth.iv350.POS.integration.CustomerDBHandler;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
@@ -22,7 +23,7 @@ public class Controller {
     Purchase purchase;
     AccountingSystem accountingSystem;
 
-    public Controller (ItemDBHandler itemDBHandler, AccountingSystem accountingSystem){
+    public Controller (ItemDBHandler itemDBHandler, CustomerDBHandler customerDBHandler, AccountingSystem accountingSystem){
         this.itemDBHandler = itemDBHandler;
         this.purchase = null;
         this.accountingSystem = accountingSystem;
