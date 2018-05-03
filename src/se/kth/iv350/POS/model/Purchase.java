@@ -37,7 +37,6 @@ public class Purchase {
             }
         uniqueItems.add(new UniqueItem(validItem));
         updateTotal();
-        System.out.println("1 Price" + this.totalPrice);
     }
 
     private void updateTotal() {
@@ -53,9 +52,7 @@ public class Purchase {
 
     public int finalizeSale(int amount, ItemDBHandler itemDBHandler, AccountingSystem accountingSystem){
         this.amountPayed = amount;
-        System.out.println("Payed: " + amount);
         this.change = CalculateChange();
-        System.out.println("Change: " + this.change);
         Register register = new Register();
         register.getReceipt(getPurchaseData(), amountPayed, change);
         itemDBHandler.sendPurchaseInfo(getPurchaseData());
@@ -64,7 +61,6 @@ public class Purchase {
     }
 
     private int CalculateChange(){
-        System.out.println("Price: " + this.totalPrice);
         return (this.amountPayed - this.totalPrice);
     }
 
