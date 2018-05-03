@@ -6,11 +6,22 @@ public class CustomerDatabase {
 
     ArrayList<CustomerDTO> customers = new ArrayList<CustomerDTO>();
 
+    /**
+     * Creates an instance of a fictional database, it represents three customers with id, and
+     * discount in percentage of total price
+     */
+
     public CustomerDatabase (){
         customers.add(new CustomerDTO("1", 10));
         customers.add(new CustomerDTO("2", 20));
         customers.add(new CustomerDTO("3", 30));
     }
+
+    /**
+     * Searches the customer database by an id represented as a string.
+     * @param searchedID The string that is used as the search parameter
+     * @return The <code>CustomerDTO</code> whose <code>customerID</code> matches searchedID
+     */
 
     public CustomerDTO searchCustomerByID(String searchedID){
 

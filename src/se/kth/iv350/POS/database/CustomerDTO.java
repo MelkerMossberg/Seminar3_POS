@@ -8,7 +8,7 @@ public class CustomerDTO {
     /**
      * Creates an instance.
      * @param customerID The customer id in the newly created instance
-     * @param discount The discount for the newly created instance
+     * @param discount The discount rate for the newly created instance, represented in percentage of the total price
      */
 
     public CustomerDTO (String customerID, int discount){
