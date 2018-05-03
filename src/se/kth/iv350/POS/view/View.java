@@ -37,7 +37,6 @@ public class View {
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
-
     }
 
     private void prepStartPanel(JFrame frame, JPanel panelSale, JPanel panelStart) {
@@ -194,21 +193,12 @@ public class View {
 
     }
     private void updateView(ArrayList<UniqueItem> items, DefaultTableModel model) {
-
-        for (int i = 0; i < model.getRowCount(); i++){
-            model.removeRow(i);
-        }
+        int temp = model.getRowCount();
+        for (int i = 0; i < temp; i++)
+            model.removeRow(0);
 
         for (UniqueItem item : items)
             model.addRow(item.getRowObject());
-
-        // Horribel buggfix för jag inte förstår varför model.addRow inte funkar ordentligt
-        if (model.getRowCount()>2)
-            model.removeRow(0);
-
-        if (model.getRowCount()>4)
-            model.removeRow(0);
-
     }
 }
 
