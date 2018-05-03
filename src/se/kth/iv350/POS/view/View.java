@@ -26,12 +26,8 @@ public class View {
         JFrame frame = new JFrame();
         frame.setTitle("Point of Sale");
 
-        JPanel panelSale = new JPanel();
-        JPanel panelStart = new JPanel();
-        prepSalePanel(frame, panelSale, panelStart);
-        prepStartPanel(frame, panelSale, panelStart);
+        prepStartPanel(frame);
 
-        frame.add(panelStart);
 
         frame.setSize(900,400);
         frame.setLocationRelativeTo(null);
@@ -39,10 +35,13 @@ public class View {
         frame.setVisible(true);
     }
 
-    private void prepStartPanel(JFrame frame, JPanel panelSale, JPanel panelStart) {
+    private void prepStartPanel(JFrame frame) {
+        JPanel panelStart = new JPanel();
+
         JButton btnNewCustomer = new JButton("New Customer");
         btnNewCustomer.setBounds(150, 220, 100, 25);
         panelStart.add(btnNewCustomer);
+        frame.add(panelStart);
         // button add row
         btnNewCustomer.addActionListener(new ActionListener(){
 
@@ -52,6 +51,8 @@ public class View {
                 controller.startNewSale();
 
                 frame.getContentPane().removeAll();
+                JPanel panelSale = new JPanel();
+                prepSalePanel(frame, panelSale, panelStart);
                 frame.getContentPane().add(panelSale);
                 frame.revalidate();
                 frame.repaint();

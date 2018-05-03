@@ -59,4 +59,7 @@ public class Controller {
         return purchase.finalizeSale(amount, itemDBHandler, accountingSystem);
     }
 
+    public int getPurchaseNumber() {
+        return this.salesList.size();
+    }
 }
