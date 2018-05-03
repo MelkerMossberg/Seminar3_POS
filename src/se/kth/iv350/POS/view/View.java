@@ -24,9 +24,10 @@ public class View {
 
         // create JFrame and JTable
         JFrame frame = new JFrame();
+        frame.setTitle("Point of Sale");
+
         JPanel panelSale = new JPanel();
         JPanel panelStart = new JPanel();
-
         prepSalePanel(frame, panelSale, panelStart);
         prepStartPanel(frame, panelSale, panelStart);
 

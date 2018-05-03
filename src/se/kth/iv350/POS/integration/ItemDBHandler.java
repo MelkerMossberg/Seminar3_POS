@@ -19,7 +19,7 @@ public class ItemDBHandler {
         return itemDatabase.searchByID(itemID);
     }
 
-    public void SendPurchaseInfo(PurchaseDTO purchaseDTO){
+    public void sendPurchaseInfo(PurchaseDTO purchaseDTO){
         itemDatabase.UpdateItemDatabase(purchaseDTO);
     }
 }

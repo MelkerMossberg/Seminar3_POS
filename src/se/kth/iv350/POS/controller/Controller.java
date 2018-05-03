@@ -1,6 +1,7 @@
 package se.kth.iv350.POS.controller;
 
 import se.kth.iv350.POS.database.ItemDTO;
+import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
@@ -19,10 +20,12 @@ public class Controller {
     ItemDBHandler itemDBHandler;
     ArrayList<Purchase> salesList = new ArrayList();
     Purchase purchase;
+    AccountingSystem accountingSystem;
 
-    public Controller (ItemDBHandler itemDBHandler){
+    public Controller (ItemDBHandler itemDBHandler, AccountingSystem accountingSystem){
         this.itemDBHandler = itemDBHandler;
         this.purchase = null;
+        this.accountingSystem = accountingSystem;
     }
 
     /**
@@ -48,13 +51,12 @@ public class Controller {
             return this.purchase.getPurchaseData(); // return previous PurchaseDTO
         }else{
             this.purchase.addItem(validItem);
-            this.purchase.updateTotal();
             return purchase.getPurchaseData();
         }
     }
 
     public int Payment(int amount){
-        return purchase.FinalizeSale(amount);
+        return purchase.finalizeSale(amount, itemDBHandler, accountingSystem);
     }
 
 }

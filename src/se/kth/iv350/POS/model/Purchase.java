@@ -10,12 +10,10 @@ public class Purchase {
 
     final String purchaseID;
     private ArrayList<ItemDTO> items;
-    private int totalPrice;
     private ArrayList<UniqueItem> uniqueItems = new ArrayList<>();
+    private int totalPrice;
     private int amountPayed;
     private int change;
-    private ItemDBHandler itemDBHandler;
-    private AccountingSystem accountingSystem;
 
     public Purchase (String id){
         this.purchaseID = id;
@@ -34,12 +32,15 @@ public class Purchase {
         for(UniqueItem item : uniqueItems)
             if (item.getItemDTO().getID().equals(validItem.getID())){
                 item.incrementAmount();
+                updateTotal();
                 return;
             }
         uniqueItems.add(new UniqueItem(validItem));
+        updateTotal();
+        System.out.println("1 Price" + this.totalPrice);
     }
 
-    public void updateTotal() {
+    private void updateTotal() {
         int newTotal = 0;
         for (ItemDTO item : this.items)
             newTotal += item.getItemPrice();
@@ -50,19 +51,25 @@ public class Purchase {
         return this.uniqueItems;
     }
 
-    public int FinalizeSale(int amount){
+    public int finalizeSale(int amount, ItemDBHandler itemDBHandler, AccountingSystem accountingSystem){
         this.amountPayed = amount;
-        this.change = this.CalculateChange(amount);
-        //Or as field in purchase
+        System.out.println("Payed: " + amount);
+        this.change = CalculateChange();
+        System.out.println("Change: " + this.change);
         Register register = new Register();
         register.getReceipt(getPurchaseData(), amountPayed, change);
-        itemDBHandler.SendPurchaseInfo(getPurchaseData());
-        accountingSystem.UpdateAccounting(getPurchaseData());
+        itemDBHandler.sendPurchaseInfo(getPurchaseData());
+        accountingSystem.updateAccounting(getPurchaseData());
         return this.change;
     }
 
-    private int CalculateChange(int amount){
-        return amount - this.totalPrice;
+    private int CalculateChange(){
+        System.out.println("Price: " + this.totalPrice);
+        return (this.amountPayed - this.totalPrice);
+    }
+
+    public ArrayList<ItemDTO> getItems(){
+        return this.items;
     }
 }
 
