@@ -80,6 +80,7 @@ public class View {
 
         JLabel totalPriceLabel = new JLabel("Total Price: ");
         JLabel totalPriceInput = new JLabel();
+        JLabel changeInputLabel = new JLabel();
 
         // create JTextFields
         JTextField textId = new JTextField();
@@ -97,6 +98,7 @@ public class View {
 
         totalPriceLabel.setBounds(600, 310, 100, 25);
         totalPriceInput.setBounds(700, 310, 100, 25);
+        changeInputLabel.setBounds(600, 290, 250, 25);
 
         textId.setBounds(20, 220, 100, 25);
         textAmount.setBounds(20, 250, 100, 25);
@@ -121,6 +123,7 @@ public class View {
         // add JTextFields to the jframe
         panelSale.add(totalPriceLabel);
         panelSale.add(totalPriceInput);
+        panelSale.add(changeInputLabel);
         panelSale.add(textId);
         panelSale.add(textAmount);
         panelSale.add(textCustomerID);
@@ -162,6 +165,19 @@ public class View {
             }
         });
 
+        // Finalize sale
+        btnPayed.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                int inputPayed = Integer.parseInt(textAmountPayed.getText());
+                int outputChange = controller.Payment(inputPayed);
+                changeInputLabel.setText("Change: " + outputChange);
+                table.setBackground(Color.WHITE);
+
+            }
+        });
 
         // Change panel to 
         btnClose.addActionListener(new ActionListener(){
