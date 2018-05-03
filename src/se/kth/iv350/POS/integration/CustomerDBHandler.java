@@ -10,7 +10,8 @@ public class CustomerDBHandler {
         this.customerDatabase = customerDB;
     }
 
-    public CustomerDTO getIfValidCustomer (String customer){
-        return customerDatabase.searchCustomerByID(customer);
+    public int getDiscountIfValid (String customer){
+        CustomerDTO customerDTO =  customerDatabase.searchCustomerByID(customer);
+        return customerDTO.getDiscount();
     }
 }

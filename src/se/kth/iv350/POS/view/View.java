@@ -179,6 +179,18 @@ public class View {
             }
         });
 
+        // Enter Customer ID
+        btnCustomer.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                String customerID = textCustomerID.getText();
+                PurchaseDTO purchaseDTO = controller.tryDiscount(customerID);
+                totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+            }
+        });
+
         // Change panel to 
         btnClose.addActionListener(new ActionListener(){
 

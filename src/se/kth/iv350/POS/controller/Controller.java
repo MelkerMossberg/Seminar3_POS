@@ -1,9 +1,11 @@
 package se.kth.iv350.POS.controller;
 
+import se.kth.iv350.POS.database.CustomerDTO;
 import se.kth.iv350.POS.database.ItemDTO;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;
 import se.kth.iv350.POS.integration.ItemDBHandler;
+import se.kth.iv350.POS.model.DiscountControl;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
 import se.kth.iv350.POS.model.UniqueItem;
@@ -19,12 +21,14 @@ public class Controller {
      * <code>purchase</code> is the current purchase
      */
     ItemDBHandler itemDBHandler;
+    CustomerDBHandler customerDBHandler;
     ArrayList<Purchase> salesList = new ArrayList();
     Purchase purchase;
     AccountingSystem accountingSystem;
 
     public Controller (ItemDBHandler itemDBHandler, CustomerDBHandler customerDBHandler, AccountingSystem accountingSystem){
         this.itemDBHandler = itemDBHandler;
+        this.customerDBHandler = customerDBHandler;
         this.purchase = null;
         this.accountingSystem = accountingSystem;
     }
@@ -63,4 +67,14 @@ public class Controller {
     public int getPurchaseNumber() {
         return this.salesList.size();
     }
+
+    public PurchaseDTO tryDiscount(String customerID){
+        int discount = customerDBHandler.getDiscountIfValid(customerID);
+        purchase.setNewDiscount(discount);
+        DiscountControl dc = new DiscountControl();
+        int newPrice = (int) dc.calculateDiscount(purchase.getPurchaseData());
+        System.out.println("END " + newPrice);
+        return purchase.setNewPrice(newPrice);
+    }
+
 }

@@ -14,12 +14,10 @@ public class CustomerDatabase {
 
     public CustomerDTO searchCustomerByID(String searchedID){
 
-        for(int i = 0; i < customers.size(); i++){
-
-            if (customers.get(i).getCustomerID().equals(searchedID)){
+        for(int i = 0; i < customers.size(); i++)
+            if (customers.get(i).getCustomerID().equals(searchedID))
                 return customers.get(i);
-            }
-        }
+
         return null;
     }
 

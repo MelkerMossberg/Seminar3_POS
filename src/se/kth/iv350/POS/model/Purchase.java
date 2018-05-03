@@ -14,6 +14,7 @@ public class Purchase {
     private int totalPrice;
     private int amountPayed;
     private int change;
+    private int discount;
 
     public Purchase (String id){
         this.purchaseID = id;
@@ -22,7 +23,7 @@ public class Purchase {
     }
 
     public PurchaseDTO getPurchaseData(){
-        PurchaseDTO purchase = new PurchaseDTO(this.purchaseID, this.items, this.totalPrice, this.uniqueItems);
+        PurchaseDTO purchase = new PurchaseDTO(this.purchaseID, this.items, this.totalPrice, this.uniqueItems, this.discount);
         return purchase;
     }
 
@@ -66,6 +67,18 @@ public class Purchase {
 
     public ArrayList<ItemDTO> getItems(){
         return this.items;
+    }
+
+    public PurchaseDTO setNewPrice (int newPrice){
+        this.totalPrice = newPrice;
+        return getPurchaseData();
+    }
+
+    public void setNewDiscount(int discount) {
+        this.discount = discount;
+    }
+    public int getDiscount() {
+        return this.discount;
     }
 }
 

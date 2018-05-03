@@ -10,12 +10,14 @@ public class PurchaseDTO {
     final ArrayList<ItemDTO> items;
     final int totalPrice;
     final ArrayList<UniqueItem> uniqueItems;
+    final int discount;
 
-    public PurchaseDTO(String purchaseID, ArrayList<ItemDTO> items, int totalPrice, ArrayList<UniqueItem> uniqueItems){
+    public PurchaseDTO(String purchaseID, ArrayList<ItemDTO> items, int totalPrice, ArrayList<UniqueItem> uniqueItems, int disocunt){
         this.purchaseID = purchaseID;
         this.items = items;
         this.totalPrice = totalPrice;
         this.uniqueItems = uniqueItems;
+        this.discount = disocunt;
     }
 
     public String getPurchaseID() {
@@ -32,5 +34,9 @@ public class PurchaseDTO {
 
     public ArrayList<UniqueItem> getUniqueItems (){
         return uniqueItems;
+    }
+
+    public int getDiscount(){
+        return this.discount;
     }
 }
