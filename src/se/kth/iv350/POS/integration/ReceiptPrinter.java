@@ -16,5 +16,7 @@ public class ReceiptPrinter {
         }
         System.out.println();
         System.out.println("Total price: " + receipt.getTotalPrice());
+        System.out.println("Amount payed: " + receipt.getAmountPayed());
+        System.out.println("Change: " + receipt.getChange());
     }
 }

@@ -25,5 +25,9 @@ public class Receipt {
     public int getTotalPrice(){
         return totalPrice;
     }
+
+    public int getAmountPayed(){ return amountPayed; }
+
+    public int getChange(){ return change; }
 }
 
