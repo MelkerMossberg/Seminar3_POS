@@ -1,5 +1,7 @@
 package se.kth.iv350.POS.database;
 
+import se.kth.iv350.POS.model.PurchaseDTO;
+
 import java.util.*;
 
 public class ItemDatabase {
@@ -25,6 +27,10 @@ public class ItemDatabase {
             }
         }
         return null;
+    }
+
+    public void UpdateItemDatabase(PurchaseDTO purchaseDTO){
+
     }
 
 }

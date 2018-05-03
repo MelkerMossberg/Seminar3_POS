@@ -31,6 +31,6 @@ public class PurchaseDTO {
     }
 
     public ArrayList<UniqueItem> getUniqueItems (){
-        return this.uniqueItems;
+        return uniqueItems;
     }
 }

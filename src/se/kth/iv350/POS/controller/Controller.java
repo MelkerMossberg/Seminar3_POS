@@ -53,6 +53,8 @@ public class Controller {
         }
     }
 
-
+    public int Payment(int amount){
+        return purchase.FinalizeSale(amount);
+    }
 
 }
