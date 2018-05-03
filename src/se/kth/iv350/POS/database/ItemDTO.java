@@ -19,7 +19,7 @@ public class ItemDTO {
         this.itemPrice = price;
         this.itemName = name;
     }
-    
+
     public String getID (){
         return this.itemID;
     }
