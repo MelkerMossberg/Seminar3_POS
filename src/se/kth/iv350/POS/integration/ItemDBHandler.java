@@ -7,6 +7,9 @@ import se.kth.iv350.POS.model.PurchaseDTO;
 
 import java.util.ArrayList;
 
+/**
+ * Represents agent that handles requests to the ItemDatabase
+ */
 public class ItemDBHandler {
 
     ItemDatabase itemDatabase;
@@ -15,11 +18,13 @@ public class ItemDBHandler {
         this.itemDatabase = database;
     }
 
+    /**
+     * Searches <code>ItemDatabase</code> for matching String.
+     * @param itemID is String to be matched in database.
+     * @return ItemDTO if parameter input was valid. Otherwise returns null.
+     */
     public ItemDTO getIfValidItem(String itemID){
         return itemDatabase.searchByID(itemID);
     }
 
-    public void sendPurchaseInfo(PurchaseDTO purchaseDTO){
-        itemDatabase.UpdateItemDatabase(purchaseDTO);
-    }
 }

@@ -12,11 +12,16 @@ import se.kth.iv350.POS.model.UniqueItem;
 
 import java.util.ArrayList;
 
+
+/**
+ * Represents agent that handles all method calls from the <code>View</code>
+ */
 public class Controller {
 
     /**
-     * Setup-variables for the controller.
-     * <code>itemDBHandler</code> integrates to the item database
+     * Setup members of the controller.
+     * <code>itemDBHandler</code> integrates to the item <code>itemDatabase</code>
+     * <code>customerDBHandler</code> integrates to the item <code>customerDatabase</code>
      * <code>salesList</code> keeps private record of Purchases made since the start of the program
      * <code>purchase</code> is the current purchase
      */
@@ -35,7 +40,7 @@ public class Controller {
 
     /**
      * Creates a new purchase session. Give this session a new ID.
-     * @return an empty data transfer object
+     * @return an empty <code>purchaseDTO</code>
      */
     public PurchaseDTO startNewSale (){
         String newPurchaseID = Integer.toString(salesList.size());
@@ -45,7 +50,7 @@ public class Controller {
     }
 
     /**
-     * Cashier scans a new item. The ID is verified with the database before being added to the purchase.
+     * When cashier scans a new item. The ID is verified with the database before being added to the purchase.
      * @param itemID String generated from barcode scan
      * @return updated information about purchase
      */
@@ -60,14 +65,20 @@ public class Controller {
         }
     }
 
+    /**
+     * Sends purchase information to register which prints a receipt
+     * @param amount is the amount payed by the customer
+     * @return returns the amount of change to give back to the customer
+     */
     public int Payment(int amount){
         return purchase.finalizeSale(amount, itemDBHandler, accountingSystem);
     }
 
-    public int getPurchaseNumber() {
-        return this.salesList.size();
-    }
-
+    /**
+     * Sends data to calculate customer's ID and calculate new price.
+     * @param customerID The customers personal ID. IDs "1" to "3" exists.
+     * @return a PurchaseDTO with updated price.
+     */
     public PurchaseDTO tryDiscount(String customerID){
         int discount = customerDBHandler.getDiscountIfValid(customerID);
         purchase.setNewDiscount(discount);
