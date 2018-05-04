@@ -53,7 +53,7 @@ public class PurchaseTest {
         for (ItemDTO item : testItems)
             purchase.addItem(item);
 
-        int change = purchase.finalizeSale(30, itemDBHandler, accountingSystem);
+        int change = purchase.finalizeSale(30, accountingSystem);
         assertEquals(0, change);
 
     }

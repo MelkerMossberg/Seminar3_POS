@@ -71,7 +71,7 @@ public class Controller {
      * @return returns the amount of change to give back to the customer
      */
     public int payment(int amount){
-        return purchase.finalizeSale(amount, itemDBHandler, accountingSystem);
+        return purchase.finalizeSale(amount, accountingSystem);
     }
 
     /**

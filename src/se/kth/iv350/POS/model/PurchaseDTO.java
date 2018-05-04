@@ -12,6 +12,16 @@ public class PurchaseDTO {
     final ArrayList<UniqueItem> uniqueItems;
     final int discount;
 
+    /**
+     * Creates a new instance of <code>PurchaseDTO</code>.
+     * @param purchaseID The ID of the <code>PurchaseDTO</code>.
+     * @param items The list of items in the <code>PurchaseDTO</code>.
+     * @param totalPrice The total price of the items.
+     * @param uniqueItems A list of unique items in the purchase, which also contains an amount of
+     *                    each unique item.
+     * @param disocunt The buying customer's discount.
+     */
+
     public PurchaseDTO(String purchaseID, ArrayList<ItemDTO> items, int totalPrice, ArrayList<UniqueItem> uniqueItems, int disocunt){
         this.purchaseID = purchaseID;
         this.items = items;
