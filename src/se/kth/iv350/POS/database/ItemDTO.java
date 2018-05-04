@@ -9,7 +9,7 @@ public class ItemDTO {
     final String itemName;
 
     /**
-     * Crates an instance of an item
+     * Creates an instance of an item
      * @param id Identifies the specific type of item.
      * @param price The price of the item.
      * @param name The name of that item

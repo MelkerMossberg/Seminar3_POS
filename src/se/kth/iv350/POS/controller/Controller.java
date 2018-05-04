@@ -70,7 +70,7 @@ public class Controller {
      * @param amount is the amount payed by the customer
      * @return returns the amount of change to give back to the customer
      */
-    public int Payment(int amount){
+    public int payment(int amount){
         return purchase.finalizeSale(amount, itemDBHandler, accountingSystem);
     }
 

@@ -5,7 +5,7 @@ import se.kth.iv350.POS.model.PurchaseDTO;
 import java.util.*;
 
 /**
- * Represents a fictional database. It always contains 5 items in a ArrayList.
+ * Represents a fictional database. It contains 5 items in a ArrayList.
  */
 public class ItemDatabase {
 

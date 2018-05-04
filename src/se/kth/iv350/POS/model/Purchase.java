@@ -56,7 +56,6 @@ public class Purchase {
         this.change = CalculateChange();
         Register register = new Register();
         register.getReceipt(getPurchaseData(), amountPayed, change);
-        itemDBHandler.sendPurchaseInfo(getPurchaseData());
         accountingSystem.updateAccounting(getPurchaseData());
         return this.change;
     }

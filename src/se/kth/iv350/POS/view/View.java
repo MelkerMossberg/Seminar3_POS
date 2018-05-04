@@ -18,16 +18,23 @@ public class View {
 
     Controller controller;
 
+    /**
+     * Creates a <code>view</code> object. A view  has action-listeners
+     * that makes method calls to the <code>controller</code> with user input.
+     * @param controller is object that will handle and propagate the input given to rest of application
+     */
     public View(Controller controller){
 
         this.controller = controller;
 
-        // create JFrame and JTable
+        /**
+         * Creates a new window with two panels: <code>startPanel</code> & <code>salesPanel</code>
+         * The <code>startPanel</code> is the first to be loaded.
+         */
         JFrame frame = new JFrame();
         frame.setTitle("Point of Sale");
 
         prepStartPanel(frame);
-
 
         frame.setSize(900,400);
         frame.setLocationRelativeTo(null);
@@ -35,19 +42,28 @@ public class View {
         frame.setVisible(true);
     }
 
+    /**
+     * This <code>panel</code> handles the state when no purchase is being registered.
+     * @param frame This panel is contained in the main frame (window).
+     */
     private void prepStartPanel(JFrame frame) {
         JPanel panelStart = new JPanel();
 
+        /**
+         * Add user interface elements to <code>panel</code>.
+         * Then add <code>panel</code> to <code>frame</code>
+         */
         JButton btnNewCustomer = new JButton("New Customer");
         btnNewCustomer.setBounds(150, 220, 100, 25);
         panelStart.add(btnNewCustomer);
         frame.add(panelStart);
-        // button add row
-        btnNewCustomer.addActionListener(new ActionListener(){
 
+        /**
+         * When user clicks "New customer"-button, create new Purchase and show new SalesPanel.
+         */
+        btnNewCustomer.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 controller.startNewSale();
 
                 frame.getContentPane().removeAll();
@@ -60,86 +76,87 @@ public class View {
         });
     }
 
+    /**
+     * This <code>panel</code> handles the current purchase.
+     * @param frame This panel is contained in the main frame (window).
+     */
     private void prepSalePanel(JFrame frame, JPanel panelSale, JPanel panelStart) {
 
+        /**
+         * Setup all user interface elements.
+         * <code>table</code> is a dynamic table that displays item info in rows and columns
+         * <code>model</code> determines how the contents of the table should behave
+         * <code>pane</code> is a container for the table. It enables scrolling if table grows high.
+         * Then there is all input fields and buttons.
+         */
+
         JTable table = new JTable();
-        // create a table model and set a Column Identifiers to this model
         Object[] columns = {"ItemID","Item Name","Price","Amount"};
+
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(columns);
-
-        // set the model to the table
         table.setModel(model);
 
-        // Change A JTable Background Color, Font Size, Font Color, Row Height
         table.setBackground(Color.LIGHT_GRAY);
         table.setForeground(Color.black);
         Font font = new Font("",1,22);
         table.setFont(font);
         table.setRowHeight(30);
 
-        JLabel totalPriceLabel = new JLabel("Total Price: ");
-        JLabel totalPriceInput = new JLabel();
-        JLabel changeInputLabel = new JLabel();
+        JScrollPane pane = new JScrollPane(table);
+        pane.setBounds(0, 0, 880, 200);
+        panelSale.setLayout(null);
+        panelSale.add(pane);
 
-        // create JTextFields
+        // Text input fields
         JTextField textId = new JTextField();
         JTextField textAmount = new JTextField();
         JTextField textCustomerID = new JTextField();
         JTextField textAmountPayed = new JTextField();
-
-        // create JButtons
-        JButton btnAdd = new JButton("Register Item");
-        JButton btnAmount = new JButton("Add amount");
-        JButton btnCustomer = new JButton("Customer ID");
-        JButton btnPayed = new JButton("Amount Payed");
-        JButton btnClose = new JButton("Finish");
-
-
-        totalPriceLabel.setBounds(600, 310, 100, 25);
-        totalPriceInput.setBounds(700, 310, 100, 25);
-        changeInputLabel.setBounds(600, 290, 250, 25);
-
         textId.setBounds(20, 220, 100, 25);
         textAmount.setBounds(20, 250, 100, 25);
         textCustomerID.setBounds(20, 280, 100, 25);
         textAmountPayed.setBounds(20, 310, 100, 25);
-
-        btnAdd.setBounds(150, 220, 200, 25);
-        btnAmount.setBounds(150, 250, 200, 25);
-        btnCustomer.setBounds(150, 280, 200, 25);
-        btnPayed.setBounds(150, 310, 200, 25);
-        btnClose.setBounds(350, 310, 200, 25);
-
-
-        // create JScrollPane
-        JScrollPane pane = new JScrollPane(table);
-        pane.setBounds(0, 0, 880, 200);
-
-        panelSale.setLayout(null);
-
-        panelSale.add(pane);
-
-        // add JTextFields to the jframe
-        panelSale.add(totalPriceLabel);
-        panelSale.add(totalPriceInput);
-        panelSale.add(changeInputLabel);
         panelSale.add(textId);
         panelSale.add(textAmount);
         panelSale.add(textCustomerID);
         panelSale.add(textAmountPayed);
 
-        // add JButtons to the jframe
+        // Buttons
+        JButton btnAdd = new JButton("Register Item");
+        JButton btnAmount = new JButton("Add amount");
+        JButton btnCustomer = new JButton("Customer ID");
+        JButton btnPayed = new JButton("Amount Payed");
+        JButton btnClose = new JButton("Finish");
+        btnAdd.setBounds(150, 220, 200, 25);
+        btnAmount.setBounds(150, 250, 200, 25);
+        btnCustomer.setBounds(150, 280, 200, 25);
+        btnPayed.setBounds(150, 310, 200, 25);
+        btnClose.setBounds(350, 310, 200, 25);
         panelSale.add(btnAdd);
         panelSale.add(btnAmount);
         panelSale.add(btnCustomer);
         panelSale.add(btnPayed);
         panelSale.add(btnClose);
 
+        // Dynamic text fields
+        JLabel totalPriceLabel = new JLabel("Total Price: ");
+        JLabel totalPriceInput = new JLabel();
+        JLabel changeInputLabel = new JLabel();
+        totalPriceLabel.setBounds(600, 310, 100, 25);
+        totalPriceInput.setBounds(700, 310, 100, 25);
+        changeInputLabel.setBounds(600, 290, 250, 25);
+        panelSale.add(totalPriceLabel);
+        panelSale.add(totalPriceInput);
+        panelSale.add(changeInputLabel);
 
-        // Register new Item
+
+        /**
+         * ActionListener: When user presses "Register Item",
+         * fire method <code>registerItem</code> and update view
+         * with input from text-field called <code>textID</code>
+         */
         btnAdd.addActionListener(new ActionListener(){
-
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -149,7 +166,11 @@ public class View {
             }
         });
 
-        // Add amount
+        /**
+         * ActionListener: When user presses "Add Amount",
+         * fire method <code>registerItem</code> in a <code>loop</code> and update view
+         * with input from text-fields called <code>textID</code> and <code>textAmount</code>
+         */
         btnAmount.addActionListener(new ActionListener(){
 
             @Override
@@ -165,14 +186,18 @@ public class View {
             }
         });
 
-        // Finalize sale
+        /**
+         * ActionListener: When user presses "Amount payed",
+         * fire method <code>payment</code> in a <code>loop</code> and update view
+         * with input from text-fields called <code>textID</code> and <code>textAmount</code>
+         */
         btnPayed.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 int inputPayed = Integer.parseInt(textAmountPayed.getText());
-                int outputChange = controller.Payment(inputPayed);
+                int outputChange = controller.payment(inputPayed);
                 changeInputLabel.setText("Change: " + outputChange);
                 table.setBackground(Color.WHITE);
 
