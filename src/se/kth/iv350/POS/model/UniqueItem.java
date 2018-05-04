@@ -6,6 +6,11 @@ public class UniqueItem {
     private ItemDTO item;
     private int amount;
 
+    /**
+     * Creates an instance of <code>UniqueItem</code>. Holds an <code>ItemDTO</code> and an amount.
+     * @param item the <code>ItemDTO</code> from which to create the <code>UniqueItem</code>
+     */
+
     public UniqueItem(ItemDTO item){
         this.item = item;
         this.amount = 1;
@@ -15,6 +20,10 @@ public class UniqueItem {
         return this.item;
     }
 
+    /**
+     * Increment the amount of the <code>UniqueItem</code>.
+     */
+
     public void incrementAmount(){
         this.amount++;
     }
@@ -23,8 +32,12 @@ public class UniqueItem {
         return this.amount;
     }
 
+    /**
+     * Creates a list of objects to be used buy the view.
+     * @return
+     */
+
     public Object[] getRowObject(){
-        // create an array of objects to set the row data
         Object[] newRow = new Object[4];
         newRow[0] = this.item.getID();
         newRow[1] = this.item.getItemName();
