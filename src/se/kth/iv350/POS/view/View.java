@@ -152,14 +152,13 @@ public class View {
 
 
         /**
-         * ActionListener: When user presses "Register Item",
+         * <code>ActionListener</code>: When user presses "Register Item",
          * fire method <code>registerItem</code> and update view
          * with input from text-field called <code>textID</code>
          */
         btnAdd.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
                 updateView(purchaseDTO.getUniqueItems(), model);
                 totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
@@ -167,15 +166,13 @@ public class View {
         });
 
         /**
-         * ActionListener: When user presses "Add Amount",
+         * <code>ActionListener</code>: When user presses "Add Amount",
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
          * with input from text-fields called <code>textID</code> and <code>textAmount</code>
          */
         btnAmount.addActionListener(new ActionListener(){
-
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 int amount = Integer.parseInt(textAmount.getText());
                 PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());;
                 for (int i = 1; i < amount; i++)
@@ -187,15 +184,13 @@ public class View {
         });
 
         /**
-         * ActionListener: When user presses "Amount payed",
-         * fire method <code>payment</code> in a <code>loop</code> and update view
+         * <code>ActionListener</code>: When user presses "Add Amount",
+         * fire method <code>registerItem</code> in a <code>loop</code> and update view
          * with input from text-fields called <code>textID</code> and <code>textAmount</code>
          */
         btnPayed.addActionListener(new ActionListener(){
-
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 int inputPayed = Integer.parseInt(textAmountPayed.getText());
                 int outputChange = controller.payment(inputPayed);
                 changeInputLabel.setText("Change: " + outputChange);
@@ -204,32 +199,36 @@ public class View {
             }
         });
 
-        // Enter Customer ID
+        /**
+         * <code>ActionListener</code>: When user presses "Customer ID",
+         * fire method <code>tryDiscount</code> and update view
+         * with input from text-fields called <code>textCustomerID</code>
+         */
         btnCustomer.addActionListener(new ActionListener(){
-
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 String customerID = textCustomerID.getText();
                 PurchaseDTO purchaseDTO = controller.tryDiscount(customerID);
                 totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
             }
         });
 
-        // Change panel to 
+        /**
+         * <code>ActionListener</code>: When user presses "Finish",
+         * remove current Salespanel and go back to Startpanel.
+         * This clears the Salespanel of all graphics to start from scratch with next customer
+         */
         btnClose.addActionListener(new ActionListener(){
-
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 frame.getContentPane().removeAll();
                 frame.getContentPane().add(panelStart);
                 frame.revalidate();
                 frame.repaint();
             }
         });
-
     }
+
     private void updateView(ArrayList<UniqueItem> items, DefaultTableModel model) {
         int temp = model.getRowCount();
         for (int i = 0; i < temp; i++)
