@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class ItemDatabase {
 
-    ArrayList<ItemDTO> itemDB = new ArrayList();
+    private ArrayList<ItemDTO> itemDB = new ArrayList();
 
     public ItemDatabase (){
         this.itemDB.add(new ItemDTO("0", 10, "Apple"));
@@ -34,5 +34,10 @@ public class ItemDatabase {
         }
         return null;
     }
+
+    public ItemDTO getItemDTO(int i){
+        return this.itemDB.get(i);
+    }
+
 
 }

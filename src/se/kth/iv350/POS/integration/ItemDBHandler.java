@@ -2,8 +2,6 @@ package se.kth.iv350.POS.integration;
 
 import se.kth.iv350.POS.database.ItemDTO;
 import se.kth.iv350.POS.database.ItemDatabase;
-import se.kth.iv350.POS.model.Purchase;
-import se.kth.iv350.POS.model.PurchaseDTO;
 
 import java.util.ArrayList;
 

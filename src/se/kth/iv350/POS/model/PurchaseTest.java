@@ -28,17 +28,14 @@ public class PurchaseTest {
     }
 
     @Test
-    public void addItem() throws  Exception{
+    public void addItemCorrect() throws  Exception{
 
-        ArrayList<ItemDTO> testItems = new ArrayList<>();
-        testItems.add(new ItemDTO("1", 10, "TestPro1"));
-        testItems.add(new ItemDTO("2", 5, "TestPro2"));
-        testItems.add(new ItemDTO("3", 15, "TestPro3"));
+        ItemDTO item = itemDBHandler.getIfValidItem("0");
+        purchase.addItem(item);
+        String result = purchase.getItems().get(0).getItemName();
+        String expectedResult = "Apple";
 
-        for (ItemDTO item : testItems)
-            purchase.addItem(item);
-
-        assertEquals(3, purchase.getItems().size());
+        assertEquals(expectedResult, result);
     }
 
 

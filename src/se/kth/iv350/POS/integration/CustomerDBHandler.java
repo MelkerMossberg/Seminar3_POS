@@ -3,6 +3,9 @@ package se.kth.iv350.POS.integration;
 import se.kth.iv350.POS.database.CustomerDTO;
 import se.kth.iv350.POS.database.CustomerDatabase;
 
+/**
+ * Represents agent that handles requests to the CustomerDatabase
+ */
 public class CustomerDBHandler {
 
     CustomerDatabase customerDatabase;

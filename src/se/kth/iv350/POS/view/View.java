@@ -1,8 +1,6 @@
 package se.kth.iv350.POS.view;
 
 import se.kth.iv350.POS.controller.Controller;
-import se.kth.iv350.POS.database.ItemDTO;
-import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
 import se.kth.iv350.POS.model.UniqueItem;
 
@@ -12,7 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class View {
 

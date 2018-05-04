@@ -1,6 +1,5 @@
 package se.kth.iv350.POS.controller;
 
-import se.kth.iv350.POS.database.CustomerDTO;
 import se.kth.iv350.POS.database.ItemDTO;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;
@@ -8,7 +7,6 @@ import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.model.DiscountControl;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
-import se.kth.iv350.POS.model.UniqueItem;
 
 import java.util.ArrayList;
 
