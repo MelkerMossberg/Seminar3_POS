@@ -1,7 +1,5 @@
 package se.kth.iv350.POS.database;
 
-import se.kth.iv350.POS.model.PurchaseDTO;
-
 import java.util.*;
 
 /**
