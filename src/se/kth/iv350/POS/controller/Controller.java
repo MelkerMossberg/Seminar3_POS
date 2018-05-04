@@ -32,7 +32,6 @@ public class Controller {
     public Controller (ItemDBHandler itemDBHandler, CustomerDBHandler customerDBHandler, AccountingSystem accountingSystem){
         this.itemDBHandler = itemDBHandler;
         this.customerDBHandler = customerDBHandler;
-        this.purchase = null;
         this.accountingSystem = accountingSystem;
     }
 
@@ -82,7 +81,6 @@ public class Controller {
         purchase.setNewDiscount(discount);
         DiscountControl dc = new DiscountControl();
         int newPrice = (int) dc.calculateDiscount(purchase.getPurchaseData());
-        System.out.println("END " + newPrice);
         return purchase.setNewPrice(newPrice);
     }
 
