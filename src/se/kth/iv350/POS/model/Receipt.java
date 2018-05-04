@@ -11,6 +11,14 @@ public class Receipt {
     private int change;
     private int amountPayed;
 
+    /**
+     * Creates an instance of <code>Receipt</code>
+     * @param purchaseDTO The <code>PurchaseDTO</code> from which the instance sets it's members (a list of
+     *                    the unique items, the total price, the amount payed, and the change.
+     * @param amountPayed The amount payed by the customer.
+     * @param change The change given to the customer.
+     */
+
     public Receipt(PurchaseDTO purchaseDTO, int amountPayed, int change) {
         this.uniqueItems = purchaseDTO.uniqueItems;
         this.totalPrice = purchaseDTO.totalPrice;

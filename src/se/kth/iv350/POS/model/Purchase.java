@@ -16,16 +16,32 @@ public class Purchase {
     private int change;
     private int discount;
 
+    /**
+     * Creates a new instance of purchase, with an ID, a new, empty list of items and a total price
+     * @param id The ID of the purchase
+     */
+
     public Purchase (String id){
         this.purchaseID = id;
         this.items = new ArrayList<ItemDTO>();
         this.totalPrice = 0;
     }
 
+    /**
+     * Creates a <code>PurchaseDTO</code> from an instance of <code>Purchase</code>. The <code>PurchaseDTO</code>
+     * contains a list of items, a list of unique items, the total price, an ID, and the disocunt.
+     * @return Returns the created <code>PurchaseDTO</code>.
+     */
+
     public PurchaseDTO getPurchaseData(){
         PurchaseDTO purchase = new PurchaseDTO(this.purchaseID, this.items, this.totalPrice, this.uniqueItems, this.discount);
         return purchase;
     }
+
+    /**
+     * Adds a validated <code>ItemDTO</code> to the calling object's list of items.
+     * @param validItem A validated <code>ItemDTO</code>.
+     */
 
     public void addItem(ItemDTO validItem) {
         this.items.add(validItem);
@@ -51,12 +67,20 @@ public class Purchase {
         return this.uniqueItems;
     }
 
-    public int finalizeSale(int amount, ItemDBHandler itemDBHandler, AccountingSystem accountingSystem){
+    /**
+     * Creates an instance of <code>Register</code> and calls the function <code>getReceipt</code> in
+     * <code>Register</code>. It also calls the function <code>updateAccounting</code> in
+     * <code>AccountingSystem</code>, but we haven't programmed this function, it was left empty.
+     * @param amount The amount payed by the customer.
+     * @param accountingSystem An instance of the class <code>AccountingSystem</code>.
+     * @return Returns the calculated change of the purchase.
+     */
+
+    public int finalizeSale(int amount, AccountingSystem accountingSystem){
         this.amountPayed = amount;
         this.change = CalculateChange();
         Register register = new Register();
         register.getReceipt(getPurchaseData(), amountPayed, change);
-        itemDBHandler.sendPurchaseInfo(getPurchaseData());
         accountingSystem.updateAccounting(getPurchaseData());
         return this.change;
     }
@@ -68,6 +92,12 @@ public class Purchase {
     public ArrayList<ItemDTO> getItems(){
         return this.items;
     }
+
+    /**
+     * Sets a new total price.
+     * @param newPrice The new price to be set.
+     * @return returns a purchase DTO generated from the calling object.
+     */
 
     public PurchaseDTO setNewPrice (int newPrice){
         this.totalPrice = newPrice;
