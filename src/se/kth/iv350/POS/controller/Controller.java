@@ -1,13 +1,18 @@
 package se.kth.iv350.POS.controller;
 
+import se.kth.iv350.POS.database.DatabaseFailureException;
 import se.kth.iv350.POS.database.ItemDTO;
+import se.kth.iv350.POS.database.ItemIDNotFoundException;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.model.DiscountControl;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
+import se.kth.iv350.POS.util.LogHandler;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -51,15 +56,18 @@ public class Controller {
      * @param itemID String generated from barcode scan
      * @return updated information about purchase
      */
-    public PurchaseDTO registerItem(String itemID){
-        ItemDTO validItem = itemDBHandler.getIfValidItem(itemID);
-        if (validItem == null){
-            System.out.println("Error Item not valid");
-            return this.purchase.getPurchaseData(); // return previous PurchaseDTO
-        }else{
-            this.purchase.addItem(validItem);
-            return purchase.getPurchaseData();
+    public PurchaseDTO registerItem(String itemID)
+            throws RegisterFailedException, DatabaseFailureException {
+        ItemDTO validItem = null;
+        try {
+            validItem = itemDBHandler.getIfValidItem(itemID);
+        }catch (ItemIDNotFoundException | DatabaseFailureException exc){
+            throw new RegisterFailedException("Failed to register. ", exc);
         }
+
+        this.purchase.addItem(validItem);
+        return purchase.getPurchaseData();
+
     }
 
     /**

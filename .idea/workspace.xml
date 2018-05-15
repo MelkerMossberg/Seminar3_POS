@@ -2,18 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab74cb2c-8356-499d-b1bf-b39d6bd04150" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/test$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/test$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/test$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/test$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/test.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/RegisterFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/database/DatabaseFailureException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemIDNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/util/LogHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/view/ErrorMessageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/controller/ControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/controller/ControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/database/ItemDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/database/ItemDatabase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/database/ItemDatabaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/database/ItemDatabaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/integration/ItemDBHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/integration/ItemDBHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/integration/ItemDBHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/integration/ItemDBHandlerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Seminar3_POS/se/kth/iv350/POS/view/View.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/AccountingSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/AccountingSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/startup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/startup/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,88 +39,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ItemDBHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="293">
+              <caret line="25" column="105" selection-start-line="25" selection-start-column="105" selection-end-line="25" selection-end-column="105" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReceiptPrinter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ReceiptPrinter.java">
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+            <state relative-caret-position="230">
+              <caret line="64" column="73" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2532#2533#0" expanded="true" />
+                <element signature="e#2602#2603#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountingSystem.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/AccountingSystem.java">
+      <file leaf-file-name="LogHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/util/LogHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="255">
+              <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Receipt.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Receipt.java">
+      <file leaf-file-name="ControllerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Purchase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java">
+      <file leaf-file-name="RegisterFailedException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/RegisterFailedException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9">
-              <caret line="46" column="17" lean-forward="true" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+            <state relative-caret-position="75">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1990#1991#0" expanded="true" />
-                <element signature="e#2016#2017#0" expanded="true" />
+                <element signature="e#138#139#0" expanded="true" />
+                <element signature="e#159#160#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PurchaseDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseDTO.java">
+      <file leaf-file-name="ErrorMessageHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/ErrorMessageHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="375">
+              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
-                <element signature="e#800#801#0" expanded="true" />
-                <element signature="e#834#835#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PurchaseTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseTest.java">
+      <file leaf-file-name="ItemDatabase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+            <state relative-caret-position="325">
+              <caret line="38" column="83" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="83" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1140#1141#0" expanded="true" />
+                <element signature="e#1181#1182#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DatabaseFailureException.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/DatabaseFailureException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+              <folding>
+                <element signature="e#135#136#0" expanded="true" />
+                <element signature="e#155#156#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,17 +142,24 @@
       <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="144" column="76" selection-start-line="144" selection-start-column="76" selection-end-line="144" selection-end-column="76" />
+            <state relative-caret-position="245">
+              <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java">
+      <file leaf-file-name="ItemIDNotFoundException.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemIDNotFoundException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
+            <state relative-caret-position="30">
+              <caret line="2" column="36" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="36" />
+              <folding>
+                <element signature="e#154#155#0" expanded="true" />
+                <element signature="e#174#175#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -148,27 +181,33 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTestTest.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTest.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ReceiptPrinter.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/model/Receipt.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseDTO.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/model/Register.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/startup/Main.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/AccountingSystem.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java" />
         <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseTest.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/view/ErrorMessageHandler.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/util/LogHandler.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemIDNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTest.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandlerTest.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/controller/RegisterFailedException.java" />
+        <option value="$PROJECT_DIR$/src/se/kth/iv350/POS/database/DatabaseFailureException.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="825" />
+    <option name="height" value="822" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -176,9 +215,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="Course" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,13 +276,20 @@
               <item name="Seminar3_POS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="POS" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Seminar3_POS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Seminar3_POS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="POS" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="Course" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,6 +317,7 @@
       <recent name="groovy.util.GroovyTestCase" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="se.kth.iv350.POS.database" />
       <recent name="se.kth.iv350.POS.view" />
     </key>
   </component>
@@ -286,7 +333,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PurchaseTest.finalizeSale">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="se.kth.iv350.POS.startup.Main" />
       <module name="Seminar3_POS" />
@@ -392,8 +439,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PurchaseTest.finalizeSale" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PurchaseTest.finalizeSale" />
         <item itemvalue="JUnit.PurchaseTest.addItem" />
       </list>
     </recent_temporary>
@@ -427,9 +474,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PurchaseTest_finalizeSale - 2018.05.03 at 11h 46m 38s.xml">
-      <configuration name="PurchaseTest.finalizeSale" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PurchaseTest_finalizeSale - 2018.05.03 at 11h 48m 06s.xml">
       <configuration name="PurchaseTest.finalizeSale" configurationId="JUnit" />
     </history-entry>
@@ -457,25 +501,28 @@
     <history-entry file="PurchaseTest_finalizeSale - 2018.05.03 at 12h 03m 21s.xml">
       <configuration name="PurchaseTest.finalizeSale" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PurchaseTest_finalizeSale - 2018.05.04 at 14h 08m 37s.xml">
+      <configuration name="PurchaseTest.finalizeSale" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="825" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="824" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32867134" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.328" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="6" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32756326" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32533333" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3288948" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3263889" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3263889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -527,74 +574,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1860">
-          <caret line="136" column="50" lean-forward="true" selection-start-line="136" selection-start-column="50" selection-end-line="136" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1990#1991#0" expanded="true" />
-            <element signature="e#2016#2017#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
-          <folding>
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="106" column="39" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/startup/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -712,14 +691,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.groovy" />
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandlerTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/StateSwitcher.java" />
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/START_STATE.java" />
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/ViewState.java" />
@@ -741,37 +712,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="106" column="39" selection-start-line="106" selection-start-column="20" selection-end-line="106" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/test.java" />
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/startup/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="17" column="78" selection-start-line="17" selection-start-column="78" selection-end-line="17" selection-end-column="78" />
+        <state relative-caret-position="75">
+          <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Register.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        <state relative-caret-position="300">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Receipt.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
+        <state relative-caret-position="315">
           <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
@@ -783,41 +741,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/AccountingSystem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="144" column="76" selection-start-line="144" selection-start-column="76" selection-end-line="144" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -832,24 +759,169 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java">
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="46" column="17" lean-forward="true" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="17" />
+        <state relative-caret-position="660">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1990#1991#0" expanded="true" />
-            <element signature="e#2016#2017#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/PurchaseTest.java">
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/CustomerDBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
+        <state relative-caret-position="90">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/DiscountControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/model/Purchase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="107" column="18" selection-start-line="107" selection-start-column="18" selection-end-line="107" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2053#2054#0" expanded="true" />
+            <element signature="e#2092#2093#0" expanded="true" />
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3060#3061#0" expanded="true" />
+            <element signature="e#3103#3104#0" expanded="true" />
+            <element signature="e#3136#3137#0" expanded="true" />
+            <element signature="e#3481#3482#0" expanded="true" />
+            <element signature="e#3521#3522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/util.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabaseTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="35" column="2" selection-start-line="35" selection-start-column="2" selection-end-line="35" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandlerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/ControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/ErrorMessageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemIDNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="36" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#174#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/util/LogHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/integration/ItemDBHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="25" column="105" selection-start-line="25" selection-start-column="105" selection-end-line="25" selection-end-column="105" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/RegisterFailedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#138#139#0" expanded="true" />
+            <element signature="e#159#160#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="64" column="73" selection-start-line="64" selection-start-column="73" selection-end-line="64" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2532#2533#0" expanded="true" />
+            <element signature="e#2602#2603#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/ItemDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="38" column="83" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="83" />
+          <folding>
+            <element signature="e#1140#1141#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="168" lean-forward="true" selection-start-line="168" selection-end-line="168" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/se/kth/iv350/POS/database/DatabaseFailureException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="70" selection-start-line="4" selection-start-column="70" selection-end-line="4" selection-end-column="70" />
+          <folding>
+            <element signature="e#135#136#0" expanded="true" />
+            <element signature="e#155#156#0" expanded="true" />
           </folding>
         </state>
       </provider>

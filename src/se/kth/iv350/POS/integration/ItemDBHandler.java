@@ -1,7 +1,9 @@
 package se.kth.iv350.POS.integration;
 
+import se.kth.iv350.POS.database.DatabaseFailureException;
 import se.kth.iv350.POS.database.ItemDTO;
 import se.kth.iv350.POS.database.ItemDatabase;
+import se.kth.iv350.POS.database.ItemIDNotFoundException;
 
 import java.util.ArrayList;
 
@@ -21,7 +23,7 @@ public class ItemDBHandler {
      * @param itemID is String to be matched in database.
      * @return ItemDTO if parameter input was valid. Otherwise returns null.
      */
-    public ItemDTO getIfValidItem(String itemID){
+    public ItemDTO getIfValidItem(String itemID) throws ItemIDNotFoundException, DatabaseFailureException {
         return itemDatabase.searchByID(itemID);
     }
 

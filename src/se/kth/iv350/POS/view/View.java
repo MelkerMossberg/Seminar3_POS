@@ -1,19 +1,24 @@
 package se.kth.iv350.POS.view;
 
 import se.kth.iv350.POS.controller.Controller;
+import se.kth.iv350.POS.controller.RegisterFailedException;
+import se.kth.iv350.POS.database.DatabaseFailureException;
 import se.kth.iv350.POS.model.PurchaseDTO;
 import se.kth.iv350.POS.model.UniqueItem;
+import se.kth.iv350.POS.util.LogHandler;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class View {
 
     Controller controller;
+    ErrorMessageHandler errorMessageHandler = new ErrorMessageHandler();
 
     /**
      * Creates a <code>view</code> object. A view  has action-listeners
@@ -156,9 +161,23 @@ public class View {
         btnAdd.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
-                updateView(purchaseDTO.getUniqueItems(), model);
-                totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+
+                try {
+                    PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
+                    updateView(purchaseDTO.getUniqueItems(), model);
+                    totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+
+                }catch (RegisterFailedException exc) {
+                    errorMessageHandler.showErrorMsg(exc.getMessage());
+                    LogHandler logger = null;
+                    try {
+                        logger = new LogHandler();
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                    logger.logException(exc);
+                }
+
             }
         });
 
@@ -167,16 +186,22 @@ public class View {
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
          * with input from text-fields called <code>textID</code> and <code>textAmount</code>
          */
+
         btnAmount.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 int amount = Integer.parseInt(textAmount.getText());
-                PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());;
-                for (int i = 1; i < amount; i++)
-                    purchaseDTO = controller.registerItem(textId.getText());
+                try {
+                    PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
 
-                updateView(purchaseDTO.getUniqueItems(), model);
-                totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+                    for (int i = 1; i < amount; i++)
+                        purchaseDTO = controller.registerItem(textId.getText());
+
+                    updateView(purchaseDTO.getUniqueItems(), model);
+                    totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+                }catch (RegisterFailedException exc){
+                    errorMessageHandler.showErrorMsg(exc.getMessage());
+                }
             }
         });
 

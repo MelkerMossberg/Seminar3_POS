@@ -7,7 +7,7 @@ import se.kth.iv350.POS.database.ItemDatabase;
 import static org.junit.Assert.*;
 
 public class ItemDBHandlerTest {
-
+/*
     ItemDatabase itemDB = new ItemDatabase();
     ItemDBHandler itemDBHandler = new ItemDBHandler(itemDB);
 
@@ -24,4 +24,5 @@ public class ItemDBHandlerTest {
         ItemDTO result = itemDBHandler.getIfValidItem("10");
         assertEquals(expectedResult, result);
     }
+    */
 }

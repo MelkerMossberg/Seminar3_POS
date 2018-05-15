@@ -6,7 +6,7 @@ import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
 
 public class ItemDatabaseTest {
-
+/*
     ItemDatabase itemDatabase = new ItemDatabase();
 
     @Test
@@ -33,5 +33,5 @@ public class ItemDatabaseTest {
         ItemDTO result = itemDatabase.searchByID(searchedID);
         assertEquals(expectedResult, result);
     }
-
+*/
 }

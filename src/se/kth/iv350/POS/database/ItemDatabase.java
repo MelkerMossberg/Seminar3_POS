@@ -15,6 +15,7 @@ public class ItemDatabase {
         this.itemDB.add(new ItemDTO("2", 5, "Shampoo"));
         this.itemDB.add(new ItemDTO("3", 8, "Coffe"));
         this.itemDB.add(new ItemDTO("4", 7, "Salami"));
+        this.itemDB.add(new ItemDTO("5", 1000, "Fail item"));
     }
 
     /**
@@ -22,15 +23,21 @@ public class ItemDatabase {
      * @param searchedID This represents a barcode on an item. "0" to "4" exists in database.
      * @return An ItemDTO which is the data-type used everywhere else in the system.
      */
-    public ItemDTO searchByID(String searchedID){
+    public ItemDTO searchByID(String searchedID)
+            throws ItemIDNotFoundException, DatabaseFailureException{
 
-        for(int i = 0; i < itemDB.size(); i++){
+        if (searchedID.equals("5")){
+            throw new DatabaseFailureException();
+        }
 
-            if (itemDB.get(i).getID().equals(searchedID)){
+        for (int i = 0; i < itemDB.size(); i++) {
+
+            if (itemDB.get(i).getID().equals(searchedID)) {
                 return itemDB.get(i);
             }
         }
-        return null;
+        throw new ItemIDNotFoundException("ID of: '" + searchedID +"' was not found in database.");
+
     }
 
     public ItemDTO getItemDTO(int i){
