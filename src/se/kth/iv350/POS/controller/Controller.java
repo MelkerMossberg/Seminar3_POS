@@ -12,6 +12,7 @@ import se.kth.iv350.POS.model.PurchaseDTO;
 import se.kth.iv350.POS.util.LogHandler;
 
 import javax.swing.*;
+import java.beans.ExceptionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -57,12 +58,14 @@ public class Controller {
      * @return updated information about purchase
      */
     public PurchaseDTO registerItem(String itemID)
-            throws RegisterFailedException, DatabaseFailureException {
+            throws RegisterFailedException, OperationFailedException {
         ItemDTO validItem = null;
         try {
             validItem = itemDBHandler.getIfValidItem(itemID);
-        }catch (ItemIDNotFoundException | DatabaseFailureException exc){
-            throw new RegisterFailedException("Failed to register. ", exc);
+        }catch (ItemIDNotFoundException exc){
+            throw new RegisterFailedException("Failed to register." + exc.getMessage(), exc);
+        }catch (DatabaseFailureException dbExc){
+            throw new OperationFailedException("Failed to register.", dbExc);
         }
 
         this.purchase.addItem(validItem);

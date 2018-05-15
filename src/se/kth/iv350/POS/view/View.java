@@ -1,6 +1,7 @@
 package se.kth.iv350.POS.view;
 
 import se.kth.iv350.POS.controller.Controller;
+import se.kth.iv350.POS.controller.OperationFailedException;
 import se.kth.iv350.POS.controller.RegisterFailedException;
 import se.kth.iv350.POS.database.DatabaseFailureException;
 import se.kth.iv350.POS.model.PurchaseDTO;
@@ -172,10 +173,19 @@ public class View {
                     LogHandler logger = null;
                     try {
                         logger = new LogHandler();
+                        logger.logException((Exception) exc.getCause());
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
-                    logger.logException(exc);
+                }catch (OperationFailedException oExc){
+                    errorMessageHandler.showErrorMsg(oExc.getMessage());
+                    LogHandler logger = null;
+                    try {
+                        logger = new LogHandler();
+                        logger.logException((Exception) oExc.getCause());
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                 }
 
             }
@@ -186,7 +196,7 @@ public class View {
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
          * with input from text-fields called <code>textID</code> and <code>textAmount</code>
          */
-
+/*
         btnAmount.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -204,7 +214,7 @@ public class View {
                 }
             }
         });
-
+*/
         /**
          * <code>ActionListener</code>: When user presses "Add Amount",
          * fire method <code>registerItem</code> in a <code>loop</code> and update view

@@ -27,7 +27,7 @@ public class ItemDatabase {
             throws ItemIDNotFoundException, DatabaseFailureException{
 
         if (searchedID.equals("5")){
-            throw new DatabaseFailureException();
+            throw new DatabaseFailureException("Database failure. Entered: " + searchedID);
         }
 
         for (int i = 0; i < itemDB.size(); i++) {

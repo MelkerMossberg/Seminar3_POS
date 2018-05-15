@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class DatabaseFailureException extends IllegalArgumentException {
 
-    DatabaseFailureException(){
-        super();
+    DatabaseFailureException(String msg){
+        super(msg);
     }
 }
