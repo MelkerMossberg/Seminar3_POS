@@ -29,11 +29,13 @@ public class View {
     public View(Controller controller){
 
         this.controller = controller;
+        controller.addTotalPurchasedObserver(new TotalPurchasedDisplay());
 
         /**
          * Creates a new window with two panels: <code>startPanel</code> & <code>salesPanel</code>
          * The <code>startPanel</code> is the first to be loaded.
          */
+
         JFrame frame = new JFrame();
         frame.setTitle("Point of Sale");
 
@@ -196,7 +198,7 @@ public class View {
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
          * with input from text-fields called <code>textID</code> and <code>textAmount</code>
          */
-/*
+
         btnAmount.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -211,10 +213,12 @@ public class View {
                     totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
                 }catch (RegisterFailedException exc){
                     errorMessageHandler.showErrorMsg(exc.getMessage());
+                } catch (OperationFailedException e1) {
+                    e1.printStackTrace();
                 }
             }
         });
-*/
+
         /**
          * <code>ActionListener</code>: When user presses "Add Amount",
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
@@ -253,6 +257,7 @@ public class View {
         btnClose.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                controller.closePurchase();
                 frame.getContentPane().removeAll();
                 frame.getContentPane().add(panelStart);
                 frame.revalidate();

@@ -1,9 +1,9 @@
-15 maj 2018 14:11:32, Exception was thrown: Database failure. Entered: 5
-se.kth.iv350.POS.database.DatabaseFailureException: Database failure. Entered: 5
-	at se.kth.iv350.POS.database.ItemDatabase.searchByID(ItemDatabase.java:30)
+16 maj 2018 11:43:02, Exception was thrown: ID of: '§' was not found in database.
+se.kth.iv350.POS.database.ItemIDNotFoundException: ID of: '§' was not found in database.
+	at se.kth.iv350.POS.database.ItemDatabase.searchByID(ItemDatabase.java:39)
 	at se.kth.iv350.POS.integration.ItemDBHandler.getIfValidItem(ItemDBHandler.java:27)
-	at se.kth.iv350.POS.controller.Controller.registerItem(Controller.java:64)
-	at se.kth.iv350.POS.view.View$2.actionPerformed(View.java:167)
+	at se.kth.iv350.POS.controller.Controller.registerItem(Controller.java:67)
+	at se.kth.iv350.POS.view.View$2.actionPerformed(View.java:169)
 	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
 	at java.desktop/javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2308)
 	at java.desktop/javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:405)

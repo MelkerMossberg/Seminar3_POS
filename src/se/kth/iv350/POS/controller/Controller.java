@@ -9,6 +9,7 @@ import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.model.DiscountControl;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.PurchaseDTO;
+import se.kth.iv350.POS.model.TotalPurchasedObserver;
 import se.kth.iv350.POS.util.LogHandler;
 
 import javax.swing.*;
@@ -29,11 +30,12 @@ public class Controller {
      * <code>salesList</code> keeps private record of Purchases made since the start of the program
      * <code>purchase</code> is the current purchase
      */
-    ItemDBHandler itemDBHandler;
-    CustomerDBHandler customerDBHandler;
-    ArrayList<Purchase> salesList = new ArrayList();
-    Purchase purchase;
-    AccountingSystem accountingSystem;
+    private ItemDBHandler itemDBHandler;
+    private CustomerDBHandler customerDBHandler;
+    private ArrayList<Purchase> salesList = new ArrayList();
+    private Purchase purchase;
+    private AccountingSystem accountingSystem;
+    private TotalPurchasedObserver totalPurchaseObserver;
 
     public Controller (ItemDBHandler itemDBHandler, CustomerDBHandler customerDBHandler, AccountingSystem accountingSystem){
         this.itemDBHandler = itemDBHandler;
@@ -49,6 +51,7 @@ public class Controller {
         String newPurchaseID = Integer.toString(salesList.size());
         this.purchase = new Purchase(newPurchaseID);
         salesList.add(this.purchase);
+        purchase.addTotalPurshasedObserver(this.totalPurchaseObserver);
         return this.purchase.getPurchaseData();
     }
 
@@ -79,7 +82,11 @@ public class Controller {
      * @return returns the amount of change to give back to the customer
      */
     public int payment(int amount){
-        return purchase.finalizeSale(amount, accountingSystem);
+        return purchase.calculateChange(amount);
+    }
+
+    public void closePurchase(){
+        purchase.finalizeSale(this.accountingSystem);
     }
 
     /**
@@ -93,6 +100,10 @@ public class Controller {
         DiscountControl dc = new DiscountControl();
         int newPrice = (int) dc.calculateDiscount(purchase.getPurchaseData());
         return purchase.setNewPrice(newPrice);
+    }
+
+    public void addTotalPurchasedObserver(TotalPurchasedObserver observer){
+        this.totalPurchaseObserver = observer;
     }
 
 }

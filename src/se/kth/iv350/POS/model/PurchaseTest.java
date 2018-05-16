@@ -40,7 +40,7 @@ public class PurchaseTest {
 
 
     @Test
-    public void finalizeSale() throws  Exception{
+    public void calculateChange() throws  Exception{
 
         ArrayList<ItemDTO> testItems = new ArrayList<>();
         testItems.add(new ItemDTO("1", 10, "TestPro1"));
@@ -50,7 +50,7 @@ public class PurchaseTest {
         for (ItemDTO item : testItems)
             purchase.addItem(item);
 
-        int change = purchase.finalizeSale(30, accountingSystem);
+        int change = purchase.calculateChange(30);
         assertEquals(0, change);
 
     }

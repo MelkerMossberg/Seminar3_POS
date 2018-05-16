@@ -15,6 +15,7 @@ public class Purchase {
     private int amountPayed;
     private int change;
     private int discount;
+    private TotalPurchasedObserver totalPurchasedObserver;
 
     /**
      * Creates a new instance of purchase, with an ID, a new, empty list of items and a total price
@@ -72,22 +73,22 @@ public class Purchase {
      * <code>Register</code>. It also calls the function <code>updateAccounting</code> in
      * <code>AccountingSystem</code>, but we haven't programmed this function, it was left empty.
      * @param amount The amount payed by the customer.
-     * @param accountingSystem An instance of the class <code>AccountingSystem</code>.
      * @return Returns the calculated change of the purchase.
      */
 
-    public int finalizeSale(int amount, AccountingSystem accountingSystem){
+    public int calculateChange(int amount){
         this.amountPayed = amount;
-        this.change = CalculateChange();
-        Register register = new Register();
-        register.getReceipt(getPurchaseData(), amountPayed, change);
-        accountingSystem.updateAccounting(getPurchaseData());
+        this.change = this.amountPayed - this.totalPrice;
         return this.change;
     }
 
-    private int CalculateChange(){
-        return (this.amountPayed - this.totalPrice);
+    public void finalizeSale(AccountingSystem accountingSystem){
+        Register register = new Register();
+        register.getReceipt(getPurchaseData(), amountPayed, change);
+        accountingSystem.updateAccounting(getPurchaseData());
+        notifyObserver();
     }
+
 
     public ArrayList<ItemDTO> getItems(){
         return this.items;
@@ -107,9 +108,19 @@ public class Purchase {
     public void setNewDiscount(int discount) {
         this.discount = discount;
     }
+
     public int getDiscount() {
         return this.discount;
     }
+
+    public void addTotalPurshasedObserver(TotalPurchasedObserver observer){
+        this.totalPurchasedObserver = observer;
+    }
+
+    private void notifyObserver(){
+        this.totalPurchasedObserver.updateTotalPurchased(this.totalPrice);
+    }
+
 }
 
 
