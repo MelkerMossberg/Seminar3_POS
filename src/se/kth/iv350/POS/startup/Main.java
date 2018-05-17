@@ -14,7 +14,6 @@ import se.kth.iv350.POS.view.View;
  */
 public class Main {
     public static void main (String[] args){
-        Register register = new Register();
         ItemDatabase itemDatabase = new ItemDatabase();
         CustomerDatabase customerDatabase = new CustomerDatabase();
         ItemDBHandler itemDBHandler = new ItemDBHandler(itemDatabase);

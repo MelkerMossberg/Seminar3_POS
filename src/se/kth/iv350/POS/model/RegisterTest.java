@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class RegisterTest {
 
     Purchase purchase = new Purchase("1");
-    Register register = new Register();
+    Register register = Register.getRegister();
 
     @Test
     public void getReceipt() {

@@ -83,7 +83,7 @@ public class Purchase {
     }
 
     public void finalizeSale(AccountingSystem accountingSystem){
-        Register register = new Register();
+        Register register = Register.getRegister();
         register.getReceipt(getPurchaseData(), amountPayed, change);
         accountingSystem.updateAccounting(getPurchaseData());
         notifyObserver();
