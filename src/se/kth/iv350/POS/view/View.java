@@ -114,31 +114,34 @@ public class View {
         panelSale.add(pane);
 
         // Text input fields
-        JTextField textId = new JTextField();
+        JTextField textItemCall = new JTextField();
         JTextField textAmount = new JTextField();
         JTextField textCustomerID = new JTextField();
         JTextField textAmountPayed = new JTextField();
-        textId.setBounds(20, 220, 100, 25);
+        textItemCall.setBounds(20, 220, 100, 25);
         textAmount.setBounds(20, 250, 100, 25);
         textCustomerID.setBounds(20, 280, 100, 25);
         textAmountPayed.setBounds(20, 310, 100, 25);
-        panelSale.add(textId);
+        panelSale.add(textItemCall);
         panelSale.add(textAmount);
         panelSale.add(textCustomerID);
         panelSale.add(textAmountPayed);
 
         // Buttons
-        JButton btnAdd = new JButton("Register Item");
+        JButton btnAddID = new JButton("Register Item by ID");
+        JButton btnAddName = new JButton("Register Item by Name");
         JButton btnAmount = new JButton("Add amount");
         JButton btnCustomer = new JButton("Customer ID");
         JButton btnPayed = new JButton("Amount Payed");
         JButton btnClose = new JButton("Finish");
-        btnAdd.setBounds(150, 220, 200, 25);
+        btnAddID.setBounds(150, 220, 200, 25);
+        btnAddName.setBounds(350, 220, 200, 25);
         btnAmount.setBounds(150, 250, 200, 25);
         btnCustomer.setBounds(150, 280, 200, 25);
         btnPayed.setBounds(150, 310, 200, 25);
         btnClose.setBounds(350, 310, 200, 25);
-        panelSale.add(btnAdd);
+        panelSale.add(btnAddID);
+        panelSale.add(btnAddName);
         panelSale.add(btnAmount);
         panelSale.add(btnCustomer);
         panelSale.add(btnPayed);
@@ -157,72 +160,50 @@ public class View {
 
 
         /**
-         * <code>ActionListener</code>: When user presses "Register Item",
+         * <code>ActionListener</code>: When user presses "Register Item by ID",
          * fire method <code>registerItem</code> and update view
-         * with input from text-field called <code>textID</code>
+         * with input from text-field called <code>textItemCall</code>
          */
-        btnAdd.addActionListener(new ActionListener(){
+        btnAddID.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
+                String strategy = "ID";
+                callRegisterItem(textItemCall, model, totalPriceInput, strategy);
+            }
+        });
 
-                try {
-                    PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
-                    updateView(purchaseDTO.getUniqueItems(), model);
-                    totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
-
-                }catch (RegisterFailedException exc) {
-                    errorMessageHandler.showErrorMsg(exc.getMessage());
-                    LogHandler logger = null;
-                    try {
-                        logger = new LogHandler();
-                        logger.logException((Exception) exc.getCause());
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }catch (OperationFailedException oExc){
-                    errorMessageHandler.showErrorMsg(oExc.getMessage());
-                    LogHandler logger = null;
-                    try {
-                        logger = new LogHandler();
-                        logger.logException((Exception) oExc.getCause());
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    }
-                }
-
+        /**
+         * <code>ActionListener</code>: When user presses "Register Item by Name",
+         * fire method <code>registerItem</code> and update view
+         * with input from text-field called <code>textItemCall</code>
+         */
+        btnAddName.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String strategy = "Name";
+                callRegisterItem(textItemCall, model, totalPriceInput, strategy);
             }
         });
 
         /**
          * <code>ActionListener</code>: When user presses "Add Amount",
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
-         * with input from text-fields called <code>textID</code> and <code>textAmount</code>
+         * with input from text-fields called <code>textItemCall</code> and <code>textAmount</code>
          */
 
         btnAmount.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                int amount = Integer.parseInt(textAmount.getText());
-                try {
-                    PurchaseDTO purchaseDTO = controller.registerItem(textId.getText());
-
-                    for (int i = 1; i < amount; i++)
-                        purchaseDTO = controller.registerItem(textId.getText());
-
-                    updateView(purchaseDTO.getUniqueItems(), model);
-                    totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
-                }catch (RegisterFailedException exc){
-                    errorMessageHandler.showErrorMsg(exc.getMessage());
-                } catch (OperationFailedException e1) {
-                    e1.printStackTrace();
-                }
+                int amount = Integer.parseInt(textAmount.getText()) +1;
+                for (int i = 1; i < amount; i++)
+                    callRegisterItem(textItemCall, model, totalPriceInput, "ID");
             }
         });
 
         /**
-         * <code>ActionListener</code>: When user presses "Add Amount",
+         * <code>ActionListener</code>: When user presses "Amount Payed",
          * fire method <code>registerItem</code> in a <code>loop</code> and update view
-         * with input from text-fields called <code>textID</code> and <code>textAmount</code>
+         * with input from text-fields called <code>textItemCall</code> and <code>textAmount</code>
          */
         btnPayed.addActionListener(new ActionListener(){
             @Override
@@ -264,6 +245,35 @@ public class View {
                 frame.repaint();
             }
         });
+    }
+
+    private void callRegisterItem(JTextField textItemCall, DefaultTableModel model, JLabel totalPriceInput, String strategy) {
+
+        try {
+            PurchaseDTO purchaseDTO = controller.registerItem(textItemCall.getText(), strategy);
+            updateView(purchaseDTO.getUniqueItems(), model);
+            totalPriceInput.setText(Integer.toString(purchaseDTO.getTotalPrice()));
+
+        }catch (RegisterFailedException exc) {
+            errorMessageHandler.showErrorMsg(exc.getMessage());
+            LogHandler logger = null;
+            try {
+                logger = new LogHandler();
+                logger.logException((Exception) exc.getCause());
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }catch (OperationFailedException oExc){
+            errorMessageHandler.showErrorMsg(oExc.getMessage());
+            LogHandler logger = null;
+            try {
+                logger = new LogHandler();
+                logger.logException((Exception) oExc.getCause());
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+
     }
 
     private void updateView(ArrayList<UniqueItem> items, DefaultTableModel model) {

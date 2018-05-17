@@ -27,17 +27,6 @@ public class PurchaseTest {
         assertEquals("Apple", purchase.getPurchaseData().getItems().get(0).getItemName());
     }
 
-    @Test
-    public void addItemCorrect() throws  Exception{
-
-        ItemDTO item = itemDBHandler.getIfValidItem("0");
-        purchase.addItem(item);
-        String result = purchase.getItems().get(0).getItemName();
-        String expectedResult = "Apple";
-
-        assertEquals(expectedResult, result);
-    }
-
 
     @Test
     public void calculateChange() throws  Exception{

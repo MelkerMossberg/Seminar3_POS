@@ -6,10 +6,7 @@ import se.kth.iv350.POS.database.ItemIDNotFoundException;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;
 import se.kth.iv350.POS.integration.ItemDBHandler;
-import se.kth.iv350.POS.model.DiscountControl;
-import se.kth.iv350.POS.model.Purchase;
-import se.kth.iv350.POS.model.PurchaseDTO;
-import se.kth.iv350.POS.model.TotalPurchasedObserver;
+import se.kth.iv350.POS.model.*;
 import se.kth.iv350.POS.util.LogHandler;
 
 import javax.swing.*;
@@ -36,6 +33,7 @@ public class Controller {
     private Purchase purchase;
     private AccountingSystem accountingSystem;
     private TotalPurchasedObserver totalPurchaseObserver;
+    private SearchEngine searchEngine;
 
     public Controller (ItemDBHandler itemDBHandler, CustomerDBHandler customerDBHandler, AccountingSystem accountingSystem){
         this.itemDBHandler = itemDBHandler;
@@ -52,19 +50,22 @@ public class Controller {
         this.purchase = new Purchase(newPurchaseID);
         salesList.add(this.purchase);
         purchase.addTotalPurshasedObserver(this.totalPurchaseObserver);
+        this.searchEngine = new SearchEngine(itemDBHandler);
         return this.purchase.getPurchaseData();
+
     }
 
     /**
      * When cashier scans a new item. The ID is verified with the database before being added to the purchase.
-     * @param itemID String generated from barcode scan
+     * @param itemCall String generated from barcode scan
      * @return updated information about purchase
      */
-    public PurchaseDTO registerItem(String itemID)
+    public PurchaseDTO registerItem(String itemCall, String searchStrategy)
             throws RegisterFailedException, OperationFailedException {
+
         ItemDTO validItem = null;
         try {
-            validItem = itemDBHandler.getIfValidItem(itemID);
+            validItem = searchEngine.searchItem(itemCall, searchStrategy);
         }catch (ItemIDNotFoundException exc){
             throw new RegisterFailedException("Failed to register." + exc.getMessage(), exc);
         }catch (DatabaseFailureException dbExc){

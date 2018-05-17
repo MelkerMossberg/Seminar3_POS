@@ -20,11 +20,10 @@ public class ItemDBHandler {
 
     /**
      * Searches <code>ItemDatabase</code> for matching String.
-     * @param itemID is String to be matched in database.
      * @return ItemDTO if parameter input was valid. Otherwise returns null.
      */
-    public ItemDTO getIfValidItem(String itemID) throws ItemIDNotFoundException, DatabaseFailureException {
-        return itemDatabase.searchByID(itemID);
+    public ArrayList<ItemDTO> fetchDatabase() throws ItemIDNotFoundException, DatabaseFailureException {
+        return itemDatabase.getItems();
     }
 
 }

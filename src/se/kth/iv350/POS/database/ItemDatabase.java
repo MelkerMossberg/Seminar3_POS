@@ -18,30 +18,12 @@ public class ItemDatabase {
         this.itemDB.add(new ItemDTO("5", 1000, "Fail item"));
     }
 
-    /**
-     * Searches for an item that matches a given String.
-     * @param searchedID This represents a barcode on an item. "0" to "4" exists in database.
-     * @return An ItemDTO which is the data-type used everywhere else in the system.
-     */
-    public ItemDTO searchByID(String searchedID)
-            throws ItemIDNotFoundException, DatabaseFailureException{
-
-        if (searchedID.equals("5")){
-            throw new DatabaseFailureException("Database failure. Entered: " + searchedID);
-        }
-
-        for (int i = 0; i < itemDB.size(); i++) {
-
-            if (itemDB.get(i).getID().equals(searchedID)) {
-                return itemDB.get(i);
-            }
-        }
-        throw new ItemIDNotFoundException("ID of: '" + searchedID +"' was not found in database.");
-
-    }
-
     public ItemDTO getItemDTO(int i){
         return this.itemDB.get(i);
+    }
+
+    public ArrayList<ItemDTO> getItems(){
+        return this.itemDB;
     }
 
 
