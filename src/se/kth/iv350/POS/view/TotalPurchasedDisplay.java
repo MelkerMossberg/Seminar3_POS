@@ -1,6 +1,9 @@
 package se.kth.iv350.POS.view;
 import se.kth.iv350.POS.model.TotalPurchasedObserver;
 
+/**
+ * Is a observer of "Total Purchased". It prints the updated value to the console.
+ */
 public class TotalPurchasedDisplay implements TotalPurchasedObserver {
 
     private int totalPurchased = 0;

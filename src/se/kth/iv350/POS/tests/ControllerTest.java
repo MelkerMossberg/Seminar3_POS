@@ -1,9 +1,9 @@
 package se.kth.iv350.POS.tests;
 
 import se.kth.iv350.POS.controller.Controller;
-import se.kth.iv350.POS.controller.OperationFailedException;
-import se.kth.iv350.POS.controller.RegisterFailedException;
-import se.kth.iv350.POS.model.DatabaseFailureException;
+import se.kth.iv350.POS.exceptions.OperationFailedException;
+import se.kth.iv350.POS.exceptions.RegisterFailedException;
+import se.kth.iv350.POS.exceptions.DatabaseFailureException;
 import se.kth.iv350.POS.database.ItemDatabase;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;

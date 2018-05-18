@@ -1,9 +1,9 @@
-18 maj 2018 13:02:50, Exception was thrown: ID of: 'Apple' was not found.
-se.kth.iv350.POS.model.ItemNotFoundException: ID of: 'Apple' was not found.
-	at se.kth.iv350.POS.model.SearchByID.searchOperation(SearchByID.java:18)
-	at se.kth.iv350.POS.model.SearchContext.searchItem(SearchContext.java:15)
-	at se.kth.iv350.POS.model.SearchEngine.searchItem(SearchEngine.java:24)
-	at se.kth.iv350.POS.controller.Controller.registerItem(Controller.java:66)
+18 maj 2018 14:48:40, Exception was thrown: ID of: '7' was not found.
+se.kth.iv350.POS.exceptions.ItemNotFoundException: ID of: '7' was not found.
+	at se.kth.iv350.POS.model.SearchByID.searchOperation(SearchByID.java:28)
+	at se.kth.iv350.POS.model.SearchContext.searchItem(SearchContext.java:20)
+	at se.kth.iv350.POS.model.SearchEngine.searchItem(SearchEngine.java:29)
+	at se.kth.iv350.POS.controller.Controller.registerItem(Controller.java:69)
 	at se.kth.iv350.POS.view.View.callRegisterItem(View.java:252)
 	at se.kth.iv350.POS.view.View.access$100(View.java:18)
 	at se.kth.iv350.POS.view.View$2.actionPerformed(View.java:170)

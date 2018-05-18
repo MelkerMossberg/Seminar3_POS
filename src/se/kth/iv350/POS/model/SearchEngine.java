@@ -1,16 +1,21 @@
 package se.kth.iv350.POS.model;
 
 import se.kth.iv350.POS.database.ItemDTO;
+import se.kth.iv350.POS.exceptions.ItemNotFoundException;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 
 import java.util.ArrayList;
 
+/**
+ * Represents the agent that handles a unique search in the database.
+ * It decides what search strategy that will be implemented during runtime.
+ */
 public class SearchEngine {
+
     ItemDBHandler itemDBHandler;
     public SearchEngine (ItemDBHandler itemDBHandler){
         this.itemDBHandler = itemDBHandler;
     }
-
 
     public ItemDTO searchItem(String itemCall, String searchStrategy) throws ItemNotFoundException {
         ArrayList<ItemDTO> database = itemDBHandler.fetchDatabase();

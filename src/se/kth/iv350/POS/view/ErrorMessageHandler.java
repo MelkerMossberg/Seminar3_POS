@@ -8,7 +8,6 @@ public class ErrorMessageHandler {
 
     /**
      * Displays the specified error message.
-     *
      * @param msg The error message.
      */
     void showErrorMsg(String msg) {
