@@ -13,7 +13,7 @@ public class ItemDatabaseTest {
 
     //Todo skiv test till itemDatabase
     @Test
-    public void getItemsTest() throws Exception {
+    public void getItemsTest() {
         String expectedResult = "Apple";
         String result = itemDatabase.getItems().get(0).getItemName();
         assertEquals(expectedResult, result);

@@ -100,7 +100,7 @@ public class Controller {
         int discount = customerDBHandler.getDiscountIfValid(customerID);
         purchase.setNewDiscount(discount);
         DiscountControl dc = new DiscountControl();
-        int newPrice = (int) dc.calculateDiscount(purchase.getPurchaseData());
+        int newPrice = dc.calculateDiscount(purchase.getPurchaseData());
         return purchase.setNewPrice(newPrice);
     }
 

@@ -19,7 +19,7 @@ public class PurchaseTest {
     AccountingSystem accountingSystem = new AccountingSystem();
 
     @Test
-    public void getPurchaseData() throws Exception{
+    public void getPurchaseData() {
 
         ItemDTO item1 = new ItemDTO("1", 10, "Apple");
 
@@ -30,7 +30,7 @@ public class PurchaseTest {
 
 
     @Test
-    public void calculateChange() throws  Exception{
+    public void calculateChange() {
 
         ArrayList<ItemDTO> testItems = new ArrayList<>();
         testItems.add(new ItemDTO("1", 10, "TestPro1"));
