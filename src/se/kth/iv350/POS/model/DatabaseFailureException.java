@@ -1,6 +1,4 @@
-package se.kth.iv350.POS.database;
-
-import java.sql.SQLException;
+package se.kth.iv350.POS.model;
 
 public class DatabaseFailureException extends IllegalArgumentException {
 

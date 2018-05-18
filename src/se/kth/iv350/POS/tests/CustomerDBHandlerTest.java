@@ -1,8 +1,9 @@
-package se.kth.iv350.POS.integration;
+package se.kth.iv350.POS.tests;
 
 import org.junit.Test;
 import se.kth.iv350.POS.database.CustomerDTO;
 import se.kth.iv350.POS.database.CustomerDatabase;
+import se.kth.iv350.POS.integration.CustomerDBHandler;
 
 import static org.junit.Assert.*;
 

@@ -3,7 +3,6 @@ package se.kth.iv350.POS.view;
 import se.kth.iv350.POS.controller.Controller;
 import se.kth.iv350.POS.controller.OperationFailedException;
 import se.kth.iv350.POS.controller.RegisterFailedException;
-import se.kth.iv350.POS.database.DatabaseFailureException;
 import se.kth.iv350.POS.model.PurchaseDTO;
 import se.kth.iv350.POS.model.UniqueItem;
 import se.kth.iv350.POS.util.LogHandler;

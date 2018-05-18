@@ -1,6 +1,8 @@
-package se.kth.iv350.POS.database;
+package se.kth.iv350.POS.tests;
 
 import org.junit.Test;
+import se.kth.iv350.POS.database.CustomerDTO;
+import se.kth.iv350.POS.database.CustomerDatabase;
 
 import static junit.framework.TestCase.assertEquals;
 import static org.junit.Assert.*;
@@ -12,7 +14,7 @@ public class CustomerDatabaseTest {
 
     @Test
     public void searchCustomerByIDCorrectValues() {
-        CustomerDTO expectedResult = customerDB.customers.get(0);
+        CustomerDTO expectedResult = customerDB.getCustomers().get(0);
         CustomerDTO result = customerDB.searchCustomerByID("1");
         assertEquals(expectedResult, result);
     }

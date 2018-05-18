@@ -1,7 +1,8 @@
-package se.kth.iv350.POS.integration;
+package se.kth.iv350.POS.tests;
 
 import org.junit.Test;
 import se.kth.iv350.POS.database.ItemDTO;
+import se.kth.iv350.POS.integration.ReceiptPrinter;
 import se.kth.iv350.POS.model.Purchase;
 import se.kth.iv350.POS.model.Receipt;
 

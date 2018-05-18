@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class CustomerDatabase {
 
-    ArrayList<CustomerDTO> customers = new ArrayList<CustomerDTO>();
+    private ArrayList<CustomerDTO> customers = new ArrayList<CustomerDTO>();
 
     /**
      * Creates an instance of a fictional database, it represents three customers with id, and
@@ -30,6 +30,10 @@ public class CustomerDatabase {
                 return customers.get(i);
 
         return null;
+    }
+
+    public ArrayList<CustomerDTO> getCustomers(){
+        return this.customers;
     }
 
 }

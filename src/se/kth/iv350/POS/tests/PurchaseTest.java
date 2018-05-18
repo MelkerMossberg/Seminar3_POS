@@ -1,10 +1,11 @@
-package se.kth.iv350.POS.model;
+package se.kth.iv350.POS.tests;
 
 import org.junit.Test;
 import se.kth.iv350.POS.database.ItemDTO;
 import se.kth.iv350.POS.database.ItemDatabase;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.ItemDBHandler;
+import se.kth.iv350.POS.model.Purchase;
 
 import java.util.ArrayList;
 

@@ -14,4 +14,8 @@ public class TotalPurchasedDisplay implements TotalPurchasedObserver {
         this.totalPurchased += purchaseTotal;
         System.out.println("\nTotal Purchased: " + this.totalPurchased);
     }
+
+    public int getTotalPurchased(){
+        return totalPurchased;
+    }
 }

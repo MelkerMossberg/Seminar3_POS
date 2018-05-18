@@ -1,7 +1,6 @@
 package se.kth.iv350.POS.model;
 
 import se.kth.iv350.POS.database.ItemDTO;
-import se.kth.iv350.POS.database.ItemIDNotFoundException;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class SearchEngine {
     }
 
 
-    public ItemDTO searchItem(String itemCall, String searchStrategy) throws ItemIDNotFoundException {
+    public ItemDTO searchItem(String itemCall, String searchStrategy) throws ItemNotFoundException {
         ArrayList<ItemDTO> database = itemDBHandler.fetchDatabase();
         SearchContext context = null;
         if (searchStrategy.equals("ID")){

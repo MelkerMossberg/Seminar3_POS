@@ -1,17 +1,13 @@
 package se.kth.iv350.POS.controller;
 
-import se.kth.iv350.POS.database.DatabaseFailureException;
+import se.kth.iv350.POS.model.DatabaseFailureException;
 import se.kth.iv350.POS.database.ItemDTO;
-import se.kth.iv350.POS.database.ItemIDNotFoundException;
+import se.kth.iv350.POS.model.ItemNotFoundException;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;
 import se.kth.iv350.POS.integration.ItemDBHandler;
 import se.kth.iv350.POS.model.*;
-import se.kth.iv350.POS.util.LogHandler;
 
-import javax.swing.*;
-import java.beans.ExceptionListener;
-import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -58,6 +54,8 @@ public class Controller {
     /**
      * When cashier scans a new item. The ID is verified with the database before being added to the purchase.
      * @param itemCall String generated from barcode scan
+     * @param searchStrategy Determines which search algorithm to use.
+     * @throws ItemNotFoundException
      * @return updated information about purchase
      */
     public PurchaseDTO registerItem(String itemCall, String searchStrategy)
@@ -66,7 +64,7 @@ public class Controller {
         ItemDTO validItem = null;
         try {
             validItem = searchEngine.searchItem(itemCall, searchStrategy);
-        }catch (ItemIDNotFoundException exc){
+        }catch (ItemNotFoundException exc){
             throw new RegisterFailedException("Failed to register." + exc.getMessage(), exc);
         }catch (DatabaseFailureException dbExc){
             throw new OperationFailedException("Failed to register.", dbExc);

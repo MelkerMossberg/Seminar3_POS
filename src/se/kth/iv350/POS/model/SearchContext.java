@@ -1,7 +1,6 @@
 package se.kth.iv350.POS.model;
 
 import se.kth.iv350.POS.database.ItemDTO;
-import se.kth.iv350.POS.database.ItemIDNotFoundException;
 
 import java.util.ArrayList;
 
@@ -12,7 +11,7 @@ public class SearchContext {
         this.strategy = strategy;
     }
 
-    public ItemDTO searchItem(String itemCall, ArrayList<ItemDTO> database) throws ItemIDNotFoundException {
+    public ItemDTO searchItem(String itemCall, ArrayList<ItemDTO> database) throws ItemNotFoundException {
         return strategy.searchOperation(itemCall, database);
     }
 
