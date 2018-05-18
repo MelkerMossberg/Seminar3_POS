@@ -1,7 +1,7 @@
 package se.kth.iv350.POS.model;
 
 import se.kth.iv350.POS.database.ItemDTO;
-import se.kth.iv350.POS.exceptions.ItemNotFoundException;
+import se.kth.iv350.POS.exceptions.SearchFailedException;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class SearchContext {
         this.strategy = strategy;
     }
 
-    public ItemDTO searchItem(String itemCall, ArrayList<ItemDTO> database) throws ItemNotFoundException {
+    public ItemDTO searchItem(String itemCall, ArrayList<ItemDTO> database) throws SearchFailedException {
         return strategy.searchOperation(itemCall, database);
     }
 

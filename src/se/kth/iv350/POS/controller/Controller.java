@@ -4,7 +4,7 @@ import se.kth.iv350.POS.exceptions.OperationFailedException;
 import se.kth.iv350.POS.exceptions.RegisterFailedException;
 import se.kth.iv350.POS.exceptions.DatabaseFailureException;
 import se.kth.iv350.POS.database.ItemDTO;
-import se.kth.iv350.POS.exceptions.ItemNotFoundException;
+import se.kth.iv350.POS.exceptions.SearchFailedException;
 import se.kth.iv350.POS.integration.AccountingSystem;
 import se.kth.iv350.POS.integration.CustomerDBHandler;
 import se.kth.iv350.POS.integration.ItemDBHandler;
@@ -57,7 +57,7 @@ public class Controller {
      * When cashier scans a new item. The ID is verified with the database before being added to the purchase.
      * @param itemCall String generated from barcode scan
      * @param searchStrategy Determines which search algorithm to use.
-     * @throws ItemNotFoundException When user enters ID that does not exist in database.
+     * @throws SearchFailedException When user enters ID that does not exist in database.
      * @throws OperationFailedException When critical error occurs in in database search.
      * @return updated information about purchase
      */
@@ -67,7 +67,7 @@ public class Controller {
         ItemDTO validItem = null;
         try {
             validItem = searchEngine.searchItem(itemCall, searchStrategy);
-        }catch (ItemNotFoundException exc){
+        }catch (SearchFailedException exc){
             throw new RegisterFailedException("Failed to register." + exc.getMessage(), exc);
         }catch (DatabaseFailureException dbExc){
             throw new OperationFailedException("Failed to register.", dbExc);

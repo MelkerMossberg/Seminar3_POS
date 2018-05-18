@@ -1,5 +1,5 @@
-18 maj 2018 14:48:40, Exception was thrown: ID of: '7' was not found.
-se.kth.iv350.POS.exceptions.ItemNotFoundException: ID of: '7' was not found.
+18 maj 2018 15:43:15, Exception was thrown: ID of: '7' was not found.
+se.kth.iv350.POS.exceptions.SearchFailedException: ID of: '7' was not found.
 	at se.kth.iv350.POS.model.SearchByID.searchOperation(SearchByID.java:28)
 	at se.kth.iv350.POS.model.SearchContext.searchItem(SearchContext.java:20)
 	at se.kth.iv350.POS.model.SearchEngine.searchItem(SearchEngine.java:29)
