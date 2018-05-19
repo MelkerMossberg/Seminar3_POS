@@ -1,8 +1,8 @@
-18 maj 2018 15:46:41, Exception was thrown: ID of: '7' was not found.
-se.kth.iv350.POS.exceptions.SearchFailedException: ID of: '7' was not found.
-	at se.kth.iv350.POS.model.SearchByID.searchOperation(SearchByID.java:28)
+19 maj 2018 10:05:37, Exception was thrown: Fail: Searched item: 5
+se.kth.iv350.POS.exceptions.DatabaseFailureException: Fail: Searched item: 5
+	at se.kth.iv350.POS.model.SearchByID.searchOperation(SearchByID.java:23)
 	at se.kth.iv350.POS.model.SearchContext.searchItem(SearchContext.java:20)
-	at se.kth.iv350.POS.model.SearchEngine.searchItem(SearchEngine.java:29)
+	at se.kth.iv350.POS.model.SearchEngine.searchItem(SearchEngine.java:30)
 	at se.kth.iv350.POS.controller.Controller.registerItem(Controller.java:69)
 	at se.kth.iv350.POS.view.View.callRegisterItem(View.java:252)
 	at se.kth.iv350.POS.view.View.access$100(View.java:18)

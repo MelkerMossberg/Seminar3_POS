@@ -20,7 +20,7 @@ public class SearchByID implements SearchStrategy{
 
         for (ItemDTO item : database){
             if (itemCall.equals("5"))
-                throw new DatabaseFailureException("Fail: Searched item: " + item.getID());
+                throw new DatabaseFailureException("Fail: Searched item: 5");
             if (itemCall.equals(item.getID()))
                 return item;
 
